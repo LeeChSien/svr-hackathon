@@ -1,10 +1,21 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+group :development do
+  gem 'sqlite3'
+  # gem 'pg'
+end
+
+group :production do
+  gem 'thin'
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'heroku-deflater'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,3 +54,15 @@ group :development, :test do
   gem 'spring'
 end
 
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
+
+# OmniAuth is a library that standardizes multi-provider authentication for web applications.
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+# SimpleForm aims to be as flexible as possible while helping you with powerful components to create your forms.
+gem 'simple_form'
+
+# This package contains AASM, a library for adding finite state machines to Ruby classes.
+gem 'aasm'
