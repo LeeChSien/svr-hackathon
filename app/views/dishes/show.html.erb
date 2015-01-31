@@ -78,7 +78,7 @@
 
 <script>
   var CurrentUser = <%= current_user.get_object.to_json.html_safe %>;
-  var Dish = <%= @dish.get_object.to_json.html_safe %>;
+  var Dish = <%= @dish.get_object(current_user).to_json.html_safe %>;
   var ChatCluster = <%= @cluster.to_json.html_safe %>;
   var Collections = <%= (current_user ? current_user.collections.map {|c| c.get_object} : {}).to_json.html_safe %>;
 </script>

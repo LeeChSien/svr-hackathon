@@ -10,13 +10,17 @@ class Dish < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
-  def get_object
+  def get_object(u=nil)
     attributes.merge({
       tag_view:  tag_view,
       tag_list:  tag_list,
       photo_url: photo.url,
       user:      user.get_object,
-      comments_size: comment_threads.size
+      comments_size: comment_threads.size,
+      like_status: {
+        liked: u ? u.voted_as_when_voted_for(self) : nil,
+        likes: get_likes.size
+      }
     })
   end
 
