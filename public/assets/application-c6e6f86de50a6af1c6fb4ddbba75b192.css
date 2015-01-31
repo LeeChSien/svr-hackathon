@@ -953,6 +953,11 @@ body {
   font-weight: bold;
   font-size: 1.2em;
 }
+
+/* line 173, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.collection-index .well {
+  margin: 10px 10px;
+}
 /* line 5, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
 html, body {
   height: 100%;

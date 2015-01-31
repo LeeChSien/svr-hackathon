@@ -25,9 +25,8 @@ Rails.application.routes.draw do
       :omniauth_callbacks => 'devise/user_omniauth_callbacks',
       } {}
 
+  get    'collections'     => 'collections#index'
   post   'collections'     => 'collections#create'
-  delete 'collections/:id' => 'collections#destroy'
-
   delete 'collections/:id' => 'collections#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.

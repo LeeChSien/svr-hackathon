@@ -1,6 +1,6 @@
 (function() {
   var dishApp = angularApplication.module('dishApp',
-    ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput',
+    ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput', 'infinite-scroll',
      'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket', 'ngAnimate']);
 
   dishApp.run(function(amMoment) {
@@ -74,12 +74,31 @@
 
     $scope.page     = 1;
     $scope.keywords = '';
-    $scope.dishes   = []
+    $scope.dishes   = [];
+
+    $scope.busy = false;
+    $scope.end = false;
+
+
+    $scope.nextPage = function() {
+      if ($scope.busy || $scope.end)
+        return;
+
+      $scope.busy = true;
+
+      $http.get('/dishes/list?page=' + $scope.page).
+      success(function(content) {
+        $scope.dishes.push.apply($scope.dishes, content);
+        $scope.page += 1;
+        $scope.busy = false;
+
+        if (content.length < 30)
+          $scope.end = true;
+      });
+    };
 
     $scope.initIndex = function() {
-      $http.get('/dishes/list').success(function(content) {
-        $scope.dishes.push.apply($scope.dishes, content);
-      });
+      //
     };
 
     $scope.initShow = function() {
@@ -89,6 +108,7 @@
     $scope.addCollection = function(content) {
       $scope.collections.push.apply($scope.collections, [content]);
     };
+
 
   }]);
 

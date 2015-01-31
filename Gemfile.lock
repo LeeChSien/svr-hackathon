@@ -178,6 +178,9 @@ GEM
       rails-assets-moment (>= 2.8.0, < 2.10.0)
     rails-assets-angular-notify (2.0.2)
       rails-assets-angular (~> 1.2)
+    rails-assets-angular-prompt (1.1.0)
+      rails-assets-angular (~> 1.2.16)
+      rails-assets-angular-bootstrap (~> 0.11.0)
     rails-assets-angular-sanitize (1.3.11)
       rails-assets-angular (>= 1.2, < 2)
     rails-assets-angular-validator (0.2.6)
@@ -194,6 +197,8 @@ GEM
       rails-assets-angular (>= 1.2.1)
     rails-assets-ngDialog (0.2.6)
       rails-assets-angular (~> 1)
+    rails-assets-ngInfiniteScroll (1.1.2)
+      rails-assets-angular (>= 1.1.3)
     rails-assets-ngUpload (0.5.14)
       rails-assets-angular (>= 1.0.4)
     rails-deprecated_sanitizer (1.0.3)
@@ -267,6 +272,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -300,12 +306,14 @@ DEPENDENCIES
   rails-assets-angular-img-fallback
   rails-assets-angular-moment
   rails-assets-angular-notify
+  rails-assets-angular-prompt
   rails-assets-angular-sanitize
   rails-assets-angular-validator
   rails-assets-angular-websocket (= 1.0.5)
   rails-assets-bootstrap-file-input
   rails-assets-ng-tags-input
   rails-assets-ngDialog
+  rails-assets-ngInfiniteScroll
   rails-assets-ngUpload
   rails_12factor
   sass-rails (~> 5.0)
@@ -316,3 +324,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  will_paginate

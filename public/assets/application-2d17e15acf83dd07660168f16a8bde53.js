@@ -44813,6 +44813,298 @@ var jqyoui = angular.module('ngDragDrop', []).service('ngDragDropService', ['$ti
     return element.getAttribute(name) || element.getAttribute('data-' + name);
   };
 })(window, window.angular, window.jQuery);
+angular.module('cgPrompt',['ui.bootstrap']);
+
+angular.module('cgPrompt').factory('prompt',['$modal','$q',function($modal,$q){
+
+    var prompt = function(options){
+
+        var defaults = {
+            title: '',
+            message: '',
+            input: false,
+            label: '',
+            value: '',
+            values: false,
+            buttons: [
+                {label:'Cancel',cancel:true},
+                {label:'OK',primary:true}
+            ]
+        };
+
+        if (options === undefined){
+            options = {};
+        }
+
+        for (var key in defaults) {
+            if (options[key] === undefined) {
+                options[key] = defaults[key];
+            }
+        }
+
+        var defer = $q.defer();
+
+        $modal.open({
+            templateUrl:'angular-prompt.html',
+            controller: 'cgPromptCtrl',
+            resolve: {
+                options:function(){ 
+                    return options; 
+                }
+            }
+        }).result.then(function(result){
+            if (options.input){
+                defer.resolve(result.input);
+            } else {
+                defer.resolve(result.button);
+            }
+        }, function(){
+            defer.reject();
+        });
+
+        return defer.promise;
+    };
+
+    return prompt;
+	}
+]);
+
+angular.module('cgPrompt').controller('cgPromptCtrl',['$scope','options','$timeout',function($scope,options,$timeout){
+
+    $scope.input = {name:options.value};
+
+    $scope.options = options;
+
+    $scope.buttonClicked = function(button){
+        if (button.cancel){
+            $scope.$dismiss();
+            return;
+        }
+        if (options.input && angular.element(document.querySelector('#cgPromptForm')).scope().cgPromptForm.$invalid){
+            $scope.changed = true;
+            return;
+        }
+        $scope.$close({button:button,input:$scope.input.name});
+    };
+
+    $scope.submit = function(){
+        var ok;
+        angular.forEach($scope.options.buttons,function(button){
+            if (button.primary){
+                ok = button;
+            }
+        });
+        if (ok){
+            $scope.buttonClicked(ok);
+        }
+    };
+
+    $timeout(function(){
+        var elem = document.querySelector('#cgPromptInput');
+        if (elem) {
+            if (elem.select) {
+                elem.select();
+            }
+            if (elem.focus) {
+                elem.focus();
+            }
+        }
+    },100);
+    
+
+}]);
+
+
+angular.module('cgPrompt').run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('angular-prompt.html',
+    "<div>\n" +
+    "    <div class=\"modal-header\">\n" +
+    "        <button type=\"button\" class=\"close pull-right\" ng-click=\"$dismiss()\" aria-hidden=\"true\">×</button>\n" +
+    "        <h4 class=\"modal-title\">{{options.title}}</h4>\n" +
+    "    </div>\n" +
+    "    <div class=\"modal-body\">\n" +
+    "\n" +
+    "        <p ng-if=\"options.message\">\n" +
+    "            {{options.message}}\n" +
+    "        </p>\n" +
+    "\n" +
+    "        <form id=\"cgPromptForm\" name=\"cgPromptForm\" ng-if=\"options.input\" ng-submit=\"submit()\">\n" +
+    "            <div class=\"form-group\" ng-class=\"{'has-error':cgPromptForm.$invalid && changed}\">\n" +
+    "                <label for=\"cgPromptInput\">{{options.label}}</label>\n" +
+    "                <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\"  placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" ng-if=\"!options.values || options.values.length === 0\"/ autofocus=\"autofocus\">\n" +
+    "                <div class=\"input-group\" ng-if=\"options.values\">\n" +
+    "                    <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\" placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" autofocus=\"autofocus\"/>\n" +
+    "\n" +
+    "                    <div class=\"input-group-btn\">\n" +
+    "                        <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\"><span class=\"caret\"></span></button>\n" +
+    "                        <ul class=\"dropdown-menu pull-right\">\n" +
+    "                            <li ng-repeat=\"value in options.values\"><a href=\"\" ng-click=\"input.name = value\">{{value}}</a></li>\n" +
+    "                        </ul>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "         </form>\n" +
+    "\n" +
+    "    </div>\n" +
+    "    <div class=\"modal-footer\">\n" +
+    "        <button ng-repeat=\"button in options.buttons track by button.label\" class=\"btn btn-default {{button.style}}\" ng-class=\"{'btn-primary':button.primary}\" ng-click=\"buttonClicked(button)\">{{button.label}}</button>\n" +
+    "    </div>\n" +
+    "</div>"
+  );
+
+}]);
+/* ng-infinite-scroll - v1.1.2 - 2014-05-21 */
+
+var mod;
+
+mod = angular.module('infinite-scroll', []);
+
+mod.value('THROTTLE_MILLISECONDS', null);
+
+mod.directive('infiniteScroll', [
+  '$rootScope', '$window', '$timeout', 'THROTTLE_MILLISECONDS', function($rootScope, $window, $timeout, THROTTLE_MILLISECONDS) {
+    return {
+      scope: {
+        infiniteScroll: '&',
+        infiniteScrollContainer: '=',
+        infiniteScrollDistance: '=',
+        infiniteScrollDisabled: '=',
+        infiniteScrollUseDocumentBottom: '='
+      },
+      link: function(scope, elem, attrs) {
+        var changeContainer, checkWhenEnabled, container, handleInfiniteScrollContainer, handleInfiniteScrollDisabled, handleInfiniteScrollDistance, handleInfiniteScrollUseDocumentBottom, handler, immediateCheck, scrollDistance, scrollEnabled, throttle, useDocumentBottom;
+        $window = angular.element($window);
+        scrollDistance = null;
+        scrollEnabled = null;
+        checkWhenEnabled = null;
+        container = null;
+        immediateCheck = true;
+        useDocumentBottom = false;
+        handler = function() {
+          var containerBottom, containerTopOffset, elementBottom, remaining, shouldScroll;
+          if (container === $window) {
+            containerBottom = container.height() + container.scrollTop();
+            elementBottom = elem.offset().top + elem.height();
+          } else {
+            containerBottom = container.height();
+            containerTopOffset = 0;
+            if (container.offset() !== void 0) {
+              containerTopOffset = container.offset().top;
+            }
+            elementBottom = elem.offset().top - containerTopOffset + elem.height();
+          }
+          if (useDocumentBottom) {
+            elementBottom = $(document).height();
+          }
+          remaining = elementBottom - containerBottom;
+          shouldScroll = remaining <= container.height() * scrollDistance + 1;
+          if (shouldScroll) {
+            checkWhenEnabled = true;
+            if (scrollEnabled) {
+              if (scope.$$phase || $rootScope.$$phase) {
+                return scope.infiniteScroll();
+              } else {
+                return scope.$apply(scope.infiniteScroll);
+              }
+            }
+          } else {
+            return checkWhenEnabled = false;
+          }
+        };
+        throttle = function(func, wait) {
+          var later, previous, timeout;
+          timeout = null;
+          previous = 0;
+          later = function() {
+            var context;
+            previous = new Date().getTime();
+            $timeout.cancel(timeout);
+            timeout = null;
+            func.call();
+            return context = null;
+          };
+          return function() {
+            var now, remaining;
+            now = new Date().getTime();
+            remaining = wait - (now - previous);
+            if (remaining <= 0) {
+              clearTimeout(timeout);
+              $timeout.cancel(timeout);
+              timeout = null;
+              previous = now;
+              return func.call();
+            } else {
+              if (!timeout) {
+                return timeout = $timeout(later, remaining);
+              }
+            }
+          };
+        };
+        if (THROTTLE_MILLISECONDS != null) {
+          handler = throttle(handler, THROTTLE_MILLISECONDS);
+        }
+        scope.$on('$destroy', function() {
+          return container.off('scroll', handler);
+        });
+        handleInfiniteScrollDistance = function(v) {
+          return scrollDistance = parseInt(v, 10) || 0;
+        };
+        scope.$watch('infiniteScrollDistance', handleInfiniteScrollDistance);
+        handleInfiniteScrollDistance(scope.infiniteScrollDistance);
+        handleInfiniteScrollDisabled = function(v) {
+          scrollEnabled = !v;
+          if (scrollEnabled && checkWhenEnabled) {
+            checkWhenEnabled = false;
+            return handler();
+          }
+        };
+        scope.$watch('infiniteScrollDisabled', handleInfiniteScrollDisabled);
+        handleInfiniteScrollDisabled(scope.infiniteScrollDisabled);
+        handleInfiniteScrollUseDocumentBottom = function(v) {
+          return useDocumentBottom = v;
+        };
+        scope.$watch('infiniteScrollUseDocumentBottom', handleInfiniteScrollUseDocumentBottom);
+        handleInfiniteScrollUseDocumentBottom(scope.infiniteScrollUseDocumentBottom);
+        changeContainer = function(newContainer) {
+          if (container != null) {
+            container.off('scroll', handler);
+          }
+          container = typeof newContainer.last === 'function' && newContainer !== $window ? newContainer.last() : newContainer;
+          if (newContainer != null) {
+            return container.on('scroll', handler);
+          }
+        };
+        changeContainer($window);
+        handleInfiniteScrollContainer = function(newContainer) {
+          if ((!(newContainer != null)) || newContainer.length === 0) {
+            return;
+          }
+          newContainer = angular.element(newContainer);
+          if (newContainer != null) {
+            return changeContainer(newContainer);
+          } else {
+            throw new Exception("invalid infinite-scroll-container attribute.");
+          }
+        };
+        scope.$watch('infiniteScrollContainer', handleInfiniteScrollContainer);
+        handleInfiniteScrollContainer(scope.infiniteScrollContainer || []);
+        if (attrs.infiniteScrollParent != null) {
+          changeContainer(angular.element(elem.parent()));
+        }
+        if (attrs.infiniteScrollImmediateCheck != null) {
+          immediateCheck = scope.$eval(attrs.infiniteScrollImmediateCheck);
+        }
+        return $timeout((function() {
+          if (immediateCheck) {
+            return handler();
+          }
+        }), 0);
+      }
+    };
+  }
+]);
 var angularApplication = (function() {
 
   function set_rails_csrf(app) {
@@ -44843,9 +45135,27 @@ var angularApplication = (function() {
 })();
 (function() {
   var collectionApp = angularApplication.module('collectionApp',
-  ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput',
-  'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket', 'ngAnimate', 'angular-dragdrop']);
-});
+    ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput', 'cgPrompt',
+     'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket', 'ngAnimate', 'ngDragDrop']);
+
+  collectionApp.controller('pageCtrl', ['$scope', 'prompt', '$http', function($scope, prompt, $http) {
+    $scope.collections = Collections;
+
+    $scope.remove = function(index) {
+      prompt({
+        title: '是否刪除收藏列表？',
+        message: '確定刪除？',
+        buttons: [{ label:'取消', cancel: true }, { label:'確定', primary: true, style: 'btn-danger'}]
+      }).then(function(){
+        $http.delete('/collections/' + $scope.collections[index].id).success(function() {
+          //
+        });
+
+        $scope.collections.splice (index, 1);
+      });
+    }
+  }]);
+})();
 (function() {
   var defaultApp = angularApplication.module('defaultApp',
     ['ngSanitize', 'ui.bootstrap']);
@@ -44882,7 +45192,7 @@ var angularApplication = (function() {
 })();
 (function() {
   var dishApp = angularApplication.module('dishApp',
-    ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput',
+    ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput', 'infinite-scroll',
      'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket', 'ngAnimate']);
 
   dishApp.run(function(amMoment) {
@@ -44956,12 +45266,31 @@ var angularApplication = (function() {
 
     $scope.page     = 1;
     $scope.keywords = '';
-    $scope.dishes   = []
+    $scope.dishes   = [];
+
+    $scope.busy = false;
+    $scope.end = false;
+
+
+    $scope.nextPage = function() {
+      if ($scope.busy || $scope.end)
+        return;
+
+      $scope.busy = true;
+
+      $http.get('/dishes/list?page=' + $scope.page).
+      success(function(content) {
+        $scope.dishes.push.apply($scope.dishes, content);
+        $scope.page += 1;
+        $scope.busy = false;
+
+        if (content.length < 30)
+          $scope.end = true;
+      });
+    };
 
     $scope.initIndex = function() {
-      $http.get('/dishes/list').success(function(content) {
-        $scope.dishes.push.apply($scope.dishes, content);
-      });
+      //
     };
 
     $scope.initShow = function() {
@@ -44971,6 +45300,7 @@ var angularApplication = (function() {
     $scope.addCollection = function(content) {
       $scope.collections.push.apply($scope.collections, [content]);
     };
+
 
   }]);
 
@@ -45208,6 +45538,8 @@ var angularApplication = (function() {
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+
 
 
 

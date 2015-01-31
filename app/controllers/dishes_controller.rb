@@ -12,7 +12,7 @@ class DishesController < ApplicationController
   end
 
   def list
-    @dishes = Dish.all.order('created_at DESC')
+    @dishes = Dish.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
     render json: @dishes.map {|dish| dish.get_object}
   end
 

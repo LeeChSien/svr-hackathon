@@ -1,5 +1,9 @@
 class CollectionsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :set_ng_app
+
+  def index
+  end
 
   def create
     collection = Collection.new(name: params[:name])
@@ -15,5 +19,11 @@ class CollectionsController < ApplicationController
 
     render json: {success: true}
   end
+
+  private
+
+    def set_ng_app
+      super 'collectionApp'
+    end
 
 end

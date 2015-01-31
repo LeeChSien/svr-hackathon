@@ -32,5 +32,7 @@
 //= require moment/locale/zh-tw
 //= require angular-moment
 //= require angular-dragdrop
+//= require angular-prompt
+//= require ngInfiniteScroll
 
 //= require_tree ./angularjs
