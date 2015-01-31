@@ -5,6 +5,9 @@ class Dish < ActiveRecord::Base
   acts_as_commentable
   acts_as_votable
 
+  has_many :collect_dishes, :dependent => :destroy
+  has_many :collection, :class_name => "Collection", :through => :collect_dishes, :source => :collection
+
   mount_uploader :photo, PhotoUploader
 
   def get_object
@@ -12,7 +15,8 @@ class Dish < ActiveRecord::Base
       tag_view:  tag_view,
       tag_list:  tag_list,
       photo_url: photo.url,
-      user:      user.get_object
+      user:      user.get_object,
+      comments_size: comment_threads.size
     })
   end
 

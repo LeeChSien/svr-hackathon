@@ -1,7 +1,7 @@
 class DishesController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :list]
+  before_filter :authenticate_user!, except: [:index, :list, :like]
 
-  before_action :set_dish, only: [:show, :edit, :update, :destroy, :comments, :comment]
+  before_action :set_dish, only: [:show, :edit, :update, :destroy, :comments, :comment, :add_collection, :remove_collection, :like]
   before_filter :set_ng_app
 
   respond_to :html
@@ -12,7 +12,7 @@ class DishesController < ApplicationController
   end
 
   def list
-    @dishes = Dish.all
+    @dishes = Dish.all.order('created_at DESC')
     render json: @dishes.map {|dish| dish.get_object}
   end
 
@@ -25,6 +25,22 @@ class DishesController < ApplicationController
     render json: {success: 'ok'}
   end
 
+  def add_collection
+    collection = Collection.find(params[:collection_id])
+    if collection.user == current_user
+      collection.dishes.push(@dish) if !collection.dishes.include?(@dish)
+      render json: collection.get_object
+    end
+  end
+
+  def remove_collection
+    collection = Collection.find(params[:collection_id])
+    if collection.user == current_user
+      collection.dishes.delete(@dish) if collection.dishes.include?(@dish)
+      render json: collection.get_object
+    end
+  end
+
   def show
     @cluster = shortest_first_of_ws_cluster
     respond_with(@dish)
@@ -35,13 +51,40 @@ class DishesController < ApplicationController
     respond_with(@dish)
   end
 
+  def like
+    if @dish
+      case params[:action_type]
+      when 'like'
+        if !current_user.voted_as_when_voted_for(@dish)
+          @dish.class.transaction do
+            @dish.liked_by(current_user)
+          end
+        end
+      when 'dislike'
+        if current_user.voted_as_when_voted_for(@dish)
+          @dish.class.transaction do
+            @dish.disliked_by(current_user)
+          end
+        end
+      when 'state'
+        # nothing to do
+      end
+      render json: {
+        liked: current_user ? current_user.voted_as_when_voted_for(@dish) : nil,
+        likes: @dish.get_likes.size
+      }
+    else
+      render status: 403, nothing: true
+    end
+  end
+
   def edit
   end
 
   def create
     @dish = Dish.new(dish_params.merge(user_id: current_user.id))
     @dish.save
-    respond_with(@dish)
+    render json: @dish.get_object
   end
 
   def update

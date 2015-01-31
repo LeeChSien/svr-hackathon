@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  has_many :dishes
+  has_many :dishes, :dependent => :destroy
+  has_many :collections, :dependent => :destroy
+
+  acts_as_voter
 
   def get_object
     {

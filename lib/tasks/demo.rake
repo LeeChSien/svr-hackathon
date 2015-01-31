@@ -85,13 +85,19 @@ namespace :demo do
     Dish.delete_all
 
     Restaurant.all.shuffle.each do |r|
-      user = User.all.shuffle.first
-      dish = Dish.new({
-        store_name: r.name,
-        user_id: user.id
-      })
-      dish.remote_photo_url = r.photo
-      dish.save
+      begin
+        user = User.all.shuffle.first
+        dish = Dish.new({
+          store_name: r.name,
+          user_id: user.id
+        })
+        dish.remote_photo_url = r.photo
+        dish.save
+
+        puts "#{dish.id}"
+      rescue
+        puts 'drop'
+      end
     end
   end
 end

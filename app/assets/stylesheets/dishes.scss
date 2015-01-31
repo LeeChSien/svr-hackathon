@@ -48,6 +48,17 @@
   }
 }
 
+.masonry-brick {
+  margin: 1em;
+  width: 33%;
+  display: none;
+}
+
+.masonry-brick.loaded {
+  width: 33%;
+  display: block;
+}
+
 .icon-bar {
   padding-right: 10px;
 }

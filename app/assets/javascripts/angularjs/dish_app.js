@@ -1,13 +1,47 @@
 (function() {
   var dishApp = angularApplication.module('dishApp',
     ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput',
-     'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket']);
+     'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket', 'ngAnimate']);
 
   dishApp.run(function(amMoment) {
     amMoment.changeLocale('zh-tw');
   });
 
   dishApp.controller('wallCtrl', ['$scope', function($scope) {
+  }]);
+
+  dishApp.controller('dishCtrl', ['$scope', '$http', function($scope, $http) {
+    $scope.dish = {};
+    $scope.like_status = {};
+
+    $scope.init = function(dish) {
+      if (dish) {
+        $scope.dish = angular.copy(dish, $scope.dish);
+
+        $http.post('/dishes/' + $scope.dish.id + '/like', {
+          action_type: 'status'
+        }).success(function(content) {
+          $scope.like_status = content;
+        });
+      }
+    };
+
+    $scope.like_toggle = function() {
+      if ($scope.like_status.liked) {
+        $http.post('/dishes/' + $scope.dish.id + '/like', {
+          action_type: 'dislike'
+        }).success(function(content) {
+          $scope.like_status = content;
+        });
+      } else {
+        $http.post('/dishes/' + $scope.dish.id + '/like', {
+          action_type: 'like'
+        }).success(function(content) {
+          $scope.like_status = content;
+        });
+      }
+      $scope.like_status.liked = !$scope.like_status.liked;
+    }
   }]);
 
   dishApp.controller('pageCtrl', ['$scope', '$modal', 'ngDialog', '$http',
@@ -18,24 +52,98 @@
         controller: 'postDishCtrl',
         closeByEscape: false,
         closeByDocument: false,
-        showClose: false
+        showClose: false,
+        scope: $scope
       });
     };
 
+    $scope.openManageCollections = function(dish) {
+      $scope.selected_dish = dish;
+      ngDialog.open({
+        template: 'manageCollectionsModalContent.html',
+        controller: 'manageCollectionsCtrl',
+        closeByEscape: false,
+        closeByDocument: true,
+        showClose: false,
+        scope: $scope
+      });
+    };
+
+    $scope.collections = Collections;
+    $scope.selected_dish = [];
+
     $scope.page     = 1;
     $scope.keywords = '';
-    $scope.dishes   =[]
+    $scope.dishes   = []
 
-    $http.get('/dishes/list').success(function(content) {
-      $scope.dishes.push.apply($scope.dishes, content);
-    });
+    $scope.initIndex = function() {
+      $http.get('/dishes/list').success(function(content) {
+        $scope.dishes.push.apply($scope.dishes, content);
+      });
+    };
+
+    $scope.initShow = function() {
+      $scope.dishes.push.apply($scope.dishes, [Dish]);
+    };
+
+    $scope.addCollection = function(content) {
+      $scope.collections.push.apply($scope.collections, [content]);
+    };
+
   }]);
 
-  dishApp.controller('ModalInstanceCtrl', ['$scope', '$modalInstance',
-  function ($scope, $modalInstance) {
-    $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
+
+  dishApp.controller('manageCollectionsCtrl', ['$scope', '$http', '$element',
+  function($scope, $http, $element) {
+    $scope.model = {collection: ''};
+
+    $scope.close = function() {
+      $scope.closeThisDialog();
     };
+
+    $scope.submitCollection = function() {
+      if ($scope.model.collection.length == 0)
+        return;
+
+      $http.post('/collections', {name: $scope.model.collection}).success(function(content) {
+        $scope.addCollection(content);
+      });
+
+      $scope.model.collection = '';
+    };
+
+    $scope.isCollectionIncludeDish = function(collection, dish) {
+
+      for (var i = 0; i < collection.dishes.length; i++) {
+        if (collection.dishes[i].id == dish.id) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    $scope.toggle = function(collection_index, dish) {
+      if ($scope.isCollectionIncludeDish($scope.collections[collection_index], dish)) {
+        $scope.remove(collection_index, dish);
+      } else {
+        $scope.add(collection_index, dish);
+      }
+    };
+
+    $scope.remove = function(collection_index, dish) {
+      $http.post('/dishes/' + dish.id + '/remove_collection',
+      {collection_id: $scope.collections[collection_index].id}).success(function(content) {
+        $scope.collections[collection_index] = content;
+      });
+    };
+
+    $scope.add = function(collection_index, dish) {
+      $http.post('/dishes/' + dish.id + '/add_collection',
+      {collection_id: $scope.collections[collection_index].id}).success(function(content) {
+        $scope.collections[collection_index] = content;
+      });
+    };
+
   }]);
 
   dishApp.controller('postDishCtrl', ['$scope', '$validator', '$element', 'notify',
@@ -69,7 +177,10 @@
     };
 
     $scope.uploadComplete = function(response) {
+
       $scope.closeThisDialog();
+      $scope.dishes.unshift.apply($scope.dishes, [response]);
+
       notify({ message:'上傳成功!'});
     };
 
@@ -132,7 +243,6 @@
 
       if (m.m_type == 'comment') {
         $scope.comments.push.apply($scope.comments, [m]);
-        console.log($scope.comments);
       }
     });
 
