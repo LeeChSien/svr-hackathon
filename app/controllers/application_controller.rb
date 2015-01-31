@@ -2,4 +2,19 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
+  before_filter :set_default_ng_app
+
+  def set_default_ng_app
+    @ng_app = 'defaultApp'
+  end
+
+  def set_ng_app(ng_app)
+    @ng_app = ng_app
+  end
+
+  # for Devise
+  def after_sign_in_path_for(resource)
+    dishes_url
+  end
 end

@@ -1,0 +1,47 @@
+<div class="container" ng-controller="pageCtrl" ng-cloak>
+  <div ng-controller="wallCtrl" class="wall">
+    <div deckgrid class="deckgrid dish" source="dishes">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <a ng-href="/dishes/{{card.id}}" class="dish-photo">
+            <img src="" data-ng-src="{{card.photo_url}}">
+          </a>
+          <div class="panel-info">
+            <h4>
+              <img ng-src="{{card.user.avatar_url}}" alt="{{card.user.name}}" class="img-circle" width="40" height="40">
+              {{ card.user.name }}
+            </h4>
+            <p class="dish-description">
+              {{ card.description }}
+            <p>
+
+            <div class="dish-interaction">
+              <a ng-href="/dishes/{{card.id}}" class="btn btn-default btn-sm"><i class="fa fa-comments"></i> 0</a>
+              <button type="button" class="btn btn-default btn-sm"><i class="fa fa-heart"></i> 0</button>
+
+              <div class="btn-group pull-right" dropdown >
+                <button type="button" class="btn btn-default dropdown-toggle btn-sm">
+                  收藏至 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-footer" ng-bind-html="card.tag_view">
+      </div>
+    </div>
+  </div>
+
+  <button id="upload-btn" type="button" class="btn btn-success btn-lg"
+    ng-click="openPostDish()">分享美食</button>
+</div>
+
+<%= render partial: 'post_dish_modal' %>
+<script>
+  var Restaurants = <%= @restaurants.to_json.html_safe %>;
+</script>

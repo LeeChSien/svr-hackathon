@@ -1,0 +1,77 @@
+<div class="container" ng-cloak>
+  <div class="row">
+    <div class="col-sm-6 dish">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <a href="#" class="dish-photo">
+            <img src="<%= @dish.photo %>">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="panel-info">
+            <h4>
+              <img src="<%= @dish.user.avatar_url %>" alt="<%= @dish.user.name %>" class="img-circle" width="40" height="40">
+              <%= @dish.user.name %>
+            </h4>
+            <p class="dish-description">
+              <%= @dish.tag_view.html_safe %>
+            <p>
+            <p class="dish-description">
+              <%= @dish.description %>
+            <p>
+            <div class="dish-interaction">
+              <a href="#" class="btn btn-default btn-sm"><i class="fa fa-comments"></i> 0</a>
+              <button type="button" class="btn btn-default btn-sm"><i class="fa fa-heart"></i> 0</button>
+
+              <div class="btn-group pull-right" dropdown >
+                <button type="button" class="btn btn-default dropdown-toggle btn-sm">
+                  收藏至 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default" ng-controller="commentDishCtrl">
+        <div class="panel-heading">留言</div>
+        <div class="panel-body">
+          <div ng-repeat="comment in comments | orderBy: 'created_at'">
+            <div class="comment">
+              <h5 class="pull-left">
+                <img ng-src="{{comment.user.avatar_url}}" alt="{{comment.user.name}}" class="img-circle" width="30" height="30">
+                {{comment.user.name}}
+              </h5>
+              <p class="pull-left">
+                {{comment.body}}
+              </p>
+              <p class="pull-right" am-time-ago="comment.created_at"></p>
+            </div>
+          </div>
+          <div class="text-center" ng-if="!loaded">
+            <i class="fa fa-circle-o-notch fa-spin"></i>
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="留言..." ng-model="model.comment">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="submitComment()">送出留言</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var CurrentUser = <%= current_user.get_object.to_json.html_safe %>;
+  var Dish = <%= @dish.get_object.to_json.html_safe %>;
+</script>

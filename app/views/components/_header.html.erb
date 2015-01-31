@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header pull-left">
+      <a class="navbar-brand" href="/">酒肉朋友</a>
+    </div>
+
+<div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <li class="<%= page_active?('dishes#index') %>">
+        <a href="<%= dishes_url %>">探索</a>
+      </li>
+    </ul>
+
+
+    <ul class="nav navbar-nav navbar-right">
+<% if !user_signed_in? %>
+      <li class="<%= page_active?('devise/user_registrations#new') %>"><a href="<%= new_user_registration_path %>">註冊</a></li>
+      <li class="<%= page_active?('devise/user_sessions#new') %>"><a href="<%= new_user_session_path %>">登入</a></li>
+<% else %>
+      <li><a href="#">我的最愛</a></li>
+      <li><a href="#"><i class="fa fa-globe"></i> 通知</a></li>
+      <li><a href="<%= destroy_user_session_path %>">登出</a></li>
+<% end %>
+    </ul>
+
+    <form class="navbar-form navbar-right" role="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="你想吃什麼...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+        </span>
+      </div><!-- /input-group -->
+    </form>
+</div>
+
+    <div class="nav navbar-nav icon-bar pull-right visible-xs">
+      <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+
+      <% if !user_signed_in? %>
+<a href="<%= new_user_session_path %>" class="btn btn-default"><i class="fa fa-sign-in"></i> 登入</a>
+      <% else %>
+<a href="<%= destroy_user_session_path %>" class="btn btn-default"><i class="fa fa-sign-out"></i> 登出</a>
+      <% end %>
+    </div>
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+<ul class="nav nav-tabs visible-xs">
+  <li class="active"><a href="#">探索</a></li>
+  <li><a href="#">我的最愛</a></li>
+  <li><a href="#"><i class="fa fa-globe"></i> 通知</a></li>
+</ul>

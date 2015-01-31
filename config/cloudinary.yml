@@ -1,0 +1,19 @@
+production:
+  cloud_name: "kerjadulu-staging"
+  api_key: "851315948893983"
+  api_secret: "JebztEDFRwAEZt0RCE91fxzae20"
+
+staging:
+  cloud_name: "kerjadulu-staging"
+  api_key: "851315948893983"
+  api_secret: "JebztEDFRwAEZt0RCE91fxzae20"
+
+development:
+  cloud_name: "kerjadulu-staging"
+  api_key: "851315948893983"
+  api_secret: "JebztEDFRwAEZt0RCE91fxzae20"
+
+test:
+  cloud_name: "kerjadulu-staging"
+  api_key: "851315948893983"
+  api_secret: "JebztEDFRwAEZt0RCE91fxzae20"

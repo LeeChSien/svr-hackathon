@@ -12,5 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+
+//= require angular
+//= require angular-sanitize
+//= require angular-bootstrap
+//= require ngUpload
+//= require ngDialog
+//= require angular-validator/angular-validator
+//= require angular-validator/angular-validator-rules
+//= require ng-tags-input
+//= require angular-img-fallback/angular.dcb-img-fallback
+//= require angular-animate
+//= require angular-deckgrid
+//= require angular-elastic
+//= require angular-notify
+//= require bootstrap-file-input/bootstrap.file-input
+//= require angular-websocket/angular-websocket
+//= require moment
+//= require moment/locale/zh-tw
+//= require angular-moment
+
+//= require_tree ./angularjs

@@ -1,0 +1,34 @@
+<%= simple_form_for(@dish, html: {:'ng-upload' => 'uploadComplete(content)', class: 'post-dish-form'}) do |f| %>
+  <div class="form-group">
+    <%= f.input_field :store_name, class: 'form-control', placeholder: '店家名稱',
+      :'ng-model' => "model.name", :'validator' => "[required]" %>
+  </div>
+  <div class="form-group">
+    <%= f.input_field :photo, :accept => "image/*", :'bootstrap-file-input' => "true", title: "上傳相片" %>
+
+    <div class="text-center preview-image">
+      <div class="alert alert-danger" role="alert" ng-if="image_empty && !preview_image">請選擇圖片上傳</div>
+      <img ng-src="{{preview_image}}" ng-if="preview_image" alt="預覽" class="img-thumbnail">
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.input_field :description, class: 'form-control', placeholder: '評論這家店...',
+      :'ng-model' => "model.description", :'msd-elastic' => '' %>
+  </div>
+
+  <div class="form-group">
+    <tags-input ng-model="model.tags" placeholder="新增標籤" min-length="2"></tags-input>
+    <%= f.input_field :tag_list, :class => 'hide',
+      :'ng-model' => 'model.tag_list' %>
+  </div>
+
+
+
+
+  <%= f.input_field :latitude, class: 'hide' %>
+  <%= f.input_field :longitude, class: 'hide' %>
+
+  <div class="text-center">
+    <button type="button" class="btn btn-success btn-lg" ng-click="submit()" ng-disabled="busy">上傳 <i class="fa fa-circle-o-notch fa-spin" ng-if="busy"></i></a>
+  </div>
+<% end %>

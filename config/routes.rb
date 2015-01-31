@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+  resources :restaurants
+
+  resources :dishes do
+    collection do
+      get 'list'
+    end
+
+    member do
+      get  'comments'
+      post 'comment'
+    end
+  end
+
+  devise_for :users,
+    :skip => [],
+    :controllers => {
+      :registrations      => 'devise/user_registrations',
+      :sessions           => 'devise/user_sessions',
+      :omniauth_callbacks => 'devise/user_omniauth_callbacks',
+      } {}
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

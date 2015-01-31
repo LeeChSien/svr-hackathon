@@ -10,6 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require ng-tags-input
+ *= require ng-tags-input/ng-tags-input.bootstrap
+ *= require ngDialog
+ *= require angular-notify
  *= require_tree .
  *= require_self
  */

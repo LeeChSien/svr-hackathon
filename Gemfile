@@ -5,8 +5,8 @@ source 'https://rails-assets.org'
 gem 'rails', '4.2.0'
 
 group :development do
-  gem 'sqlite3'
-  # gem 'pg'
+  # gem 'sqlite3'
+  gem 'pg'
 end
 
 group :production do
@@ -21,7 +21,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+# gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -66,3 +66,47 @@ gem 'simple_form'
 
 # This package contains AASM, a library for adding finite state machines to Ruby classes.
 gem 'aasm'
+
+# Geocoder is a complete geocoding solution for Ruby.
+gem 'geocoder'
+
+# This plugin was originally based on Acts as Taggable on Steroids by Jonathan Viney.
+gem 'acts-as-taggable-on'
+
+# Allows for threaded comments to be added to multiple and different models.
+gem 'acts_as_commentable_with_threading'
+
+# Acts As Votable is a Ruby Gem specifically written for Rails/ActiveRecord models.
+gem 'acts_as_votable'
+
+# Dalli is a high performance pure Ruby client for accessing memcached servers.
+gem 'dalli'
+
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
+
+# Google Places
+gem 'google_places'
+
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
+gem 'carrierwave'
+
+# Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline.
+gem 'cloudinary'
+
+# Rails Assets is the frictionless proxy between Bundler and Bower.
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-sanitize'
+gem 'rails-assets-angular-bootstrap'
+gem 'rails-assets-ngUpload'
+gem 'rails-assets-angular-validator'
+gem 'rails-assets-ng-tags-input'
+gem 'rails-assets-angular-img-fallback'
+gem 'rails-assets-angular-animate'
+gem 'rails-assets-angular-deckgrid'
+gem 'rails-assets-angular-notify'
+gem 'rails-assets-angular-elastic'
+gem 'rails-assets-bootstrap-file-input'
+gem 'rails-assets-ngDialog'
+gem 'rails-assets-angular-websocket', '1.0.5'
+gem 'rails-assets-angular-moment'

@@ -1,0 +1,131 @@
+// Place all the styles related to the dishes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.deckgrid[deckgrid]::before {
+  /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
+  content: '3 .column.column-1-3';
+  font-size: 0; /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
+  visibility: hidden;
+}
+
+.deckgrid .column {
+  float: left;
+}
+
+.deckgrid .column-1-3 {
+  width: 33%;
+}
+
+.deckgrid .column-1-2 {
+  width: 50%;
+}
+
+.deckgrid .column-1-1 {
+  width: 100%;
+}
+
+@media (max-width:640px){
+  .deckgrid[deckgrid]::before {
+    content: '1 .column.column-1-1';
+  }
+}
+
+@media (min-width:641px){
+  .deckgrid[deckgrid]::before {
+    content: '2 .column.column-1-2';
+  }
+}
+
+@media (min-width:992px){
+  .deckgrid[deckgrid]::before {
+    content: '3 .column.column-1-3';
+  }
+}
+
+@media (min-width:1200px){
+  .deckgrid[deckgrid]::before {
+    content: '3 .column.column-1-3';
+  }
+}
+
+.icon-bar {
+  padding-right: 10px;
+}
+
+body {
+  padding-top: 80px;
+  background-image: url('/imgs/ps_neutral.png');
+}
+
+#upload-btn {
+  position: fixed;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  bottom: 10px;
+  opacity: 0.7;
+}
+
+#upload-btn:hover {
+  opacity: 1;
+}
+
+.post-dish-form textarea {
+  min-height: 70px;
+}
+
+.post-dish-form .preview-image {
+  margin-top: 5px;
+}
+
+.file-input-name {
+  display: none;
+}
+
+.wall .panel {
+  margin: 10px 10px;
+}
+
+.dish {
+  .panel-body {
+    padding: 0 0;
+
+    a.dish-photo {
+      display: block;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+
+    p.dish-description {
+      margin: 10px 0;
+    }
+
+    div.dish-interaction {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  .panel-info {
+    padding: 10px 10px;
+  }
+}
+
+.comment {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+
+  h5 {
+    margin: 0 0;
+  }
+
+  p {
+    margin-left: 10px;
+    line-height: 30px;
+  }
+
+  border-bottom: 1px #eee solid;
+}

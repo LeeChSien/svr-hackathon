@@ -1,0 +1,33 @@
+<div class="container">
+  <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-default panel-login" >
+      <div class="panel-heading">
+        <div class="panel-title">會員登入</div>
+      </div>
+
+      <div class="panel-body" >
+
+<% if alert and !alert.empty? %>
+        <div class="alert alert-danger col-sm-12"><%= alert %></div>
+<% end %>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-vertical', role: 'form', novalidate: 'true',
+          :'ng-controller' => 'signInFormCtrl' }) do |f| %>
+          <div class="form-group">
+            <%= f.input_field :email, required: false, class: "form-control", placeholder: "電子信箱",
+              :'ng-model' => "model.email", :'validator' => "[email]" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input_field :password, required: false, class: "form-control", placeholder: "密碼",
+              :'ng-model' => "model.password", :'validator' => "[required]" %>
+          </div>
+
+          <!-- Button -->
+          <button type="button" class="btn btn-success" ng-click="submit()">登入</button>
+          <a href="<%= new_user_registration_path %>" class="btn btn-default">成為會員</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

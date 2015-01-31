@@ -76,4 +76,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: 'svr-hackathon.herokuapp.com', port: 80 }
+
+  class ChatSetting
+    include Singleton
+    attr_accessor :memcached_host, :ws_cluster
+  end
+
+  ChatSetting.instance.ws_cluster = ['svr-websocket1']
+  ChatSetting.instance.memcached_host = '54.175.76.89:11211'
 end
