@@ -1,0 +1,2389 @@
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input {
+  display: block;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input *, tags-input :after, tags-input :before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .host {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 100%;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .host:active {
+  outline: 0;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  padding: 1px;
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: text;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  box-shadow: 1px 1px 1px 0 #d3d3d3 inset;
+  height: 100%;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags.focused {
+  outline: 0;
+  -webkit-box-shadow: 0 0 3px 1px rgba(5, 139, 242, 0.6);
+  -moz-box-shadow: 0 0 3px 1px rgba(5, 139, 242, 0.6);
+  box-shadow: 0 0 3px 1px rgba(5, 139, 242, 0.6);
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .tag-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .tag-item {
+  margin: 2px;
+  padding: 0 5px;
+  display: inline-block;
+  float: left;
+  font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  height: 26px;
+  line-height: 25px;
+  border: 1px solid #acacac;
+  border-radius: 3px;
+  background: -webkit-linear-gradient(top, #f0f9ff 0, #cbebff 47%, #a1dbff 100%);
+  background: linear-gradient(to bottom, #f0f9ff 0, #cbebff 47%, #a1dbff 100%);
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .tag-item.selected {
+  background: -webkit-linear-gradient(top, #febbbb 0, #fe9090 45%, #ff5c5c 100%);
+  background: linear-gradient(to bottom, #febbbb 0, #fe9090 45%, #ff5c5c 100%);
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .tag-item .remove-button {
+  margin: 0 0 0 5px;
+  padding: 0;
+  border: none;
+  background: 0 0;
+  cursor: pointer;
+  vertical-align: middle;
+  font: 700 16px Arial,sans-serif;
+  color: #585858;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .tag-item .remove-button:active {
+  color: red;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .input {
+  border: 0;
+  outline: 0;
+  margin: 2px;
+  padding: 0;
+  padding-left: 5px;
+  float: left;
+  height: 26px;
+  font: 14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .input.invalid-tag {
+  color: red;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .tags .input::-ms-clear {
+  display: none;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input.ng-invalid .tags {
+  -webkit-box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.6);
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .autocomplete {
+  margin-top: 5px;
+  position: absolute;
+  padding: 5px 0;
+  z-index: 999;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .autocomplete .suggestion-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .autocomplete .suggestion-item {
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #000;
+  background-color: #fff;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .autocomplete .suggestion-item.selected, tags-input .autocomplete .suggestion-item.selected em {
+  color: #fff;
+  background-color: #0097cf;
+}
+
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.min.scss */
+tags-input .autocomplete .suggestion-item em {
+  font: normal bold 16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #000;
+  background-color: #fff;
+}
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input {
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  min-height: 34px;
+}
+
+/* line 7, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .host {
+  margin: 0;
+}
+
+/* line 10, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .tags {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+/* line 22, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .tags .tag-item {
+  color: white;
+  background: #428bca;
+  border: 1px solid #357ebd;
+  border-radius: 4px;
+}
+
+/* line 28, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .tags .tag-item.selected {
+  color: white;
+  background: #d9534f;
+  border: 1px solid #d43f3a;
+}
+
+/* line 33, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .tags .tag-item .remove-button:hover {
+  text-decoration: none;
+}
+
+/* line 36, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .tags.focused {
+  border: 1px solid #66afe9;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+/* line 42, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .autocomplete {
+  border-radius: 4px;
+}
+
+/* line 45, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .autocomplete .suggestion-item.selected {
+  color: #262626;
+  background-color: whitesmoke;
+}
+
+/* line 49, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .autocomplete .suggestion-item.selected em {
+  color: #262626;
+  background-color: whitesmoke;
+}
+
+/* line 53, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input .autocomplete .suggestion-item em {
+  color: black;
+  background-color: white;
+}
+
+/* line 57, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ng-invalid .tags {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+
+/* line 64, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.input-group tags-input {
+  padding: 0;
+  display: table-cell;
+}
+
+/* line 68, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.input-group tags-input:not(:first-child) .tags {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* line 72, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.input-group tags-input:not(:last-child) .tags {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 77, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.input-group-lg tags-input:first-child .tags {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* line 81, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.input-group-lg tags-input:last-child .tags {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* line 86, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.input-group-sm tags-input:first-child .tags {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* line 90, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.input-group-sm tags-input:last-child .tags {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* line 95, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-lg, .input-group-lg tags-input {
+  min-height: 46px;
+}
+
+/* line 98, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-lg .tags, .input-group-lg tags-input .tags {
+  border-radius: 6px;
+}
+
+/* line 101, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-lg .tags .tag-item, .input-group-lg tags-input .tags .tag-item {
+  height: 38px;
+  line-height: 37px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+/* line 107, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-lg .tags .tag-item .remove-button, .input-group-lg tags-input .tags .tag-item .remove-button {
+  font-size: 20px;
+}
+
+/* line 110, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-lg .tags .input, .input-group-lg tags-input .tags .input {
+  height: 38px;
+  font-size: 18px;
+}
+
+/* line 114, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-sm, .input-group-sm tags-input {
+  min-height: 30px;
+}
+
+/* line 117, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-sm .tags, .input-group-sm tags-input .tags {
+  border-radius: 3px;
+}
+
+/* line 120, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-sm .tags .tag-item, .input-group-sm tags-input .tags .tag-item {
+  height: 22px;
+  line-height: 21px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+/* line 126, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-sm .tags .tag-item .remove-button, .input-group-sm tags-input .tags .tag-item .remove-button {
+  font-size: 16px;
+}
+
+/* line 129, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+tags-input.ti-input-sm .tags .input, .input-group-sm tags-input .tags .input {
+  height: 22px;
+  font-size: 12px;
+}
+
+/* line 134, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.has-feedback tags-input .tags {
+  padding-right: 30px;
+}
+
+/* line 138, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.has-success tags-input .tags {
+  border-color: #3c763d;
+}
+
+/* line 141, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.has-success tags-input .tags.focused {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+
+/* line 148, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.has-error tags-input .tags {
+  border-color: #a94442;
+}
+
+/* line 151, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.has-error tags-input .tags.focused {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+
+/* line 158, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.has-warning tags-input .tags {
+  border-color: #8a6d3b;
+}
+
+/* line 161, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ng-tags-input-2.1.1/app/assets/stylesheets/ng-tags-input/ng-tags-input.bootstrap.scss */
+.has-warning tags-input .tags.focused {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+@-webkit-keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 41, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+.ngdialog,
+.ngdialog *,
+.ngdialog *:before,
+.ngdialog *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 50, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+.ngdialog {
+  position: fixed;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 61, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+.ngdialog-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadein 0.5s;
+  animation: ngdialog-fadein 0.5s;
+}
+
+/* line 73, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+.ngdialog.ngdialog-closing .ngdialog-overlay {
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadeout 0.5s;
+  animation: ngdialog-fadeout 0.5s;
+}
+
+/* line 79, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+.ngdialog-content {
+  background: white;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadein 0.5s;
+  animation: ngdialog-fadein 0.5s;
+}
+
+/* line 86, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+.ngdialog.ngdialog-closing .ngdialog-content {
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadeout 0.5s;
+  animation: ngdialog-fadeout 0.5s;
+}
+
+/* line 92, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+.ngdialog-close:before {
+  font-family: 'Helvetica', Arial, sans-serif;
+  content: '\00D7';
+  cursor: pointer;
+}
+
+/* line 98, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog.scss */
+body.ngdialog-open {
+  overflow: hidden;
+}
+
+@-webkit-keyframes ngdialog-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes ngdialog-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes ngdialog-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+}
+@keyframes ngdialog-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+}
+/* line 61, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default {
+  padding-bottom: 160px;
+  padding-top: 160px;
+}
+
+/* line 66, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
+  -webkit-animation: ngdialog-flyout .5s;
+  animation: ngdialog-flyout .5s;
+}
+
+/* line 71, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  -webkit-animation: ngdialog-flyin .5s;
+  animation: ngdialog-flyin .5s;
+  background: #f0f0f0;
+  border-radius: 5px;
+  color: #444;
+  font-family: 'Helvetica',sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+  width: 450px;
+}
+
+/* line 87, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-close {
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 95, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+  background: transparent;
+  border-radius: 3px;
+  color: #bbb;
+  content: '\00D7';
+  font-size: 26px;
+  font-weight: 400;
+  height: 30px;
+  line-height: 26px;
+  position: absolute;
+  right: 3px;
+  text-align: center;
+  top: 3px;
+  width: 30px;
+}
+
+/* line 111, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-close:hover:before,
+.ngdialog.ngdialog-theme-default .ngdialog-close:active:before {
+  color: #777;
+}
+
+/* line 116, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-message {
+  margin-bottom: .5em;
+}
+
+/* line 120, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-input {
+  margin-bottom: 1em;
+}
+
+/* line 124, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"] {
+  background: #fff;
+  border: 0;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 .25em;
+  min-height: 2.5em;
+  padding: .25em .67em;
+  width: 100%;
+}
+
+/* line 141, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"]:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #8dbdf1;
+  box-shadow: inset 0 0 0 2px #8dbdf1;
+  outline: none;
+}
+
+/* line 151, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-buttons {
+  *zoom: 1;
+}
+
+/* line 155, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-buttons:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* line 161, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-button {
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  float: right;
+  font-family: inherit;
+  font-size: .8em;
+  letter-spacing: .1em;
+  line-height: 1em;
+  margin: 0 0 0 .5em;
+  padding: .75em 2em;
+  text-transform: uppercase;
+}
+
+/* line 175, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-button:focus {
+  -webkit-animation: ngdialog-pulse 1.1s infinite;
+  animation: ngdialog-pulse 1.1s infinite;
+  outline: none;
+}
+
+@media (max-width: 568px) {
+  /* line 182, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+  .ngdialog.ngdialog-theme-default .ngdialog-button:focus {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+/* line 188, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary {
+  background: #3288e6;
+  color: #fff;
+}
+
+/* line 193, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-ngDialog-0.2.6/app/assets/stylesheets/ngDialog/ngDialog-theme-default.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-secondary {
+  background: #e0e0e0;
+  color: #777;
+}
+/* line 1, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-angular-notify-2.0.2/app/assets/stylesheets/angular-notify/angular-notify.scss */
+.cg-notify-message {
+  position: fixed;
+  left: 50%;
+  top: 0px;
+  z-index: 9999;
+  max-width: 400px;
+  text-align: center;
+  background-color: #d9edf7;
+  color: #31708f;
+  padding: 15px;
+  border: 1px solid #bce8f1;
+  border-radius: 4px;
+  -webkit-transition: top 0.5s ease-out,opacity 0.2s ease-out;
+  -moz-transition: top 0.5s ease-out,opacity 0.2s ease-out;
+  -o-transition: top 0.5s ease-out,opacity 0.2s ease-out;
+  transition: top 0.5s ease-out,opacity 0.2s ease-out;
+  visibility: hidden;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+/* line 26, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-angular-notify-2.0.2/app/assets/stylesheets/angular-notify/angular-notify.scss */
+.cg-notify-message a {
+  font-weight: bold;
+  color: inherit;
+}
+
+/* line 31, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-angular-notify-2.0.2/app/assets/stylesheets/angular-notify/angular-notify.scss */
+.cg-notify-message a:hover {
+  color: inherit;
+}
+
+/* line 35, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-angular-notify-2.0.2/app/assets/stylesheets/angular-notify/angular-notify.scss */
+.cg-notify-close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  line-height: 15px;
+}
+
+/* line 55, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-angular-notify-2.0.2/app/assets/stylesheets/angular-notify/angular-notify.scss */
+.cg-notify-close:hover, .cg-notify-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+/* line 63, /Users/chsienlee/.rvm/gems/ruby-2.1.3/gems/rails-assets-angular-notify-2.0.2/app/assets/stylesheets/angular-notify/angular-notify.scss */
+.cg-notify-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+/* line 4, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.deckgrid[deckgrid]::before {
+  /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
+  content: '3 .column.column-1-3';
+  font-size: 0;
+  /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
+  visibility: hidden;
+}
+
+/* line 11, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.deckgrid .column {
+  float: left;
+}
+
+/* line 15, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.deckgrid .column-1-3 {
+  width: 33%;
+}
+
+/* line 19, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.deckgrid .column-1-2 {
+  width: 50%;
+}
+
+/* line 23, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.deckgrid .column-1-1 {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  /* line 28, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+  .deckgrid[deckgrid]::before {
+    content: '1 .column.column-1-1';
+  }
+}
+@media (min-width: 641px) {
+  /* line 34, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+  .deckgrid[deckgrid]::before {
+    content: '2 .column.column-1-2';
+  }
+}
+@media (min-width: 992px) {
+  /* line 40, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+  .deckgrid[deckgrid]::before {
+    content: '3 .column.column-1-3';
+  }
+}
+@media (min-width: 1200px) {
+  /* line 46, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+  .deckgrid[deckgrid]::before {
+    content: '3 .column.column-1-3';
+  }
+}
+/* line 51, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.masonry-brick {
+  margin: 1em;
+  width: 33%;
+  display: none;
+}
+
+/* line 57, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.masonry-brick.loaded {
+  width: 33%;
+  display: block;
+}
+
+/* line 62, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.icon-bar {
+  padding-right: 10px;
+}
+
+/* line 66, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+body {
+  padding-top: 70px;
+}
+
+/* line 70, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+#upload-btn {
+  position: fixed;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  bottom: 10px;
+  opacity: 0.7;
+}
+
+/* line 79, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+#upload-btn:hover {
+  opacity: 1;
+}
+
+/* line 83, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.post-dish-form textarea {
+  min-height: 70px;
+}
+
+/* line 87, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.post-dish-form .preview-image {
+  margin-top: 5px;
+}
+
+/* line 91, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.file-input-name {
+  display: none;
+}
+
+/* line 95, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.wall .panel {
+  margin: 10px 10px;
+}
+
+/* line 99, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.panel-default {
+  border: none;
+}
+
+/* line 103, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.panel-default:hover {
+  box-shadow: 0px 1px 4px #888888;
+}
+
+/* line 109, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .panel-body {
+  padding: 0 0;
+}
+/* line 112, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .panel-body a.dish-photo {
+  display: block;
+  width: 100%;
+}
+/* line 115, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .panel-body a.dish-photo img {
+  width: 100%;
+}
+/* line 120, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .panel-body p.dish-description {
+  margin: 10px 0;
+}
+/* line 124, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .panel-body div.dish-interaction {
+  display: inline-block;
+  width: 100%;
+}
+/* line 130, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .panel-info {
+  padding: 10px;
+  padding-top: 0px;
+}
+/* line 135, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .dish-photo {
+  padding: 10px;
+  padding-bottom: 0px;
+}
+/* line 141, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish .panel-info img.img-circle {
+  width: 20px;
+  height: 20px;
+}
+
+/* line 148, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.comment {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px #eee solid;
+}
+/* line 153, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.comment h5 {
+  margin: 0 0;
+}
+/* line 157, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.comment p {
+  margin-left: 10px;
+  line-height: 30px;
+}
+
+/* line 166, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
+.dish-comment .panel-heading {
+  background-color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* line 5, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+html, body {
+  height: 100%;
+  font-family: Microsoft JhengHei;
+  background-color: #faefee;
+}
+
+/* line 13, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.landing img {
+  width: 100%;
+}
+
+/* line 17, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.block {
+  min-height: 90%;
+}
+/* line 20, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.block .large-h1 {
+  font-size: 4em;
+}
+/* line 23, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.block h1, .block h2, .block h3, .block h4, .block h5, .block .cta-button {
+  text-align: center;
+}
+/* line 26, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.block .cta-button {
+  margin-top: 90px;
+}
+/* line 30, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.block h1 {
+  font-weight: bold;
+}
+
+/* line 35, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.landing-block {
+  margin-top: -20px;
+  background: url("/landing_bg.gif") center center no-repeat;
+  background-size: cover;
+  padding-top: 10%;
+  color: #fff;
+}
+/* line 42, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.landing-block .btn-lg {
+  font-size: 23px;
+}
+
+/* .explain-block {
+  background: url("/explain.png") center center no-repeat;
+  background-size: cover;
+} */
+/* line 53, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.scene-block img {
+  margin: 20px 0 30px 0;
+}
+
+/* line 58, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.demo1-block {
+  margin-top: 30px;
+  background: url("/demo1.gif") center center no-repeat;
+  background-size: contain;
+}
+
+/* line 64, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.demo2-block {
+  margin-top: 30px;
+  background: url("/demo2.png") center center no-repeat;
+  background-size: contain;
+}
+
+/* line 70, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.call_to_action-block {
+  min-height: 300px !important;
+}
+/* line 73, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/main.scss */
+.call_to_action-block .btn-lg {
+  margin-top: 10px;
+  font-size: 30px;
+}
+/* ------------------------------------------- */
+/* Mixins
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* Toggle Fade
+/* ------------------------------------------- */
+/* line 64, ../sass/ng-animation.scss */
+
+.toggle {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 66, ../sass/ng-animation.scss */
+.toggle.ng-enter {
+  opacity: 0;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+}
+/* line 71, ../sass/ng-animation.scss */
+.toggle.ng-enter-active {
+  opacity: 1;
+}
+/* line 75, ../sass/ng-animation.scss */
+.toggle.ng-leave {
+  opacity: 1;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+}
+/* line 80, ../sass/ng-animation.scss */
+.toggle.ng-leave-active {
+  opacity: 0;
+}
+/* line 85, ../sass/ng-animation.scss */
+.toggle.ng-hide-add {
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 89, ../sass/ng-animation.scss */
+.toggle.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+/* line 94, ../sass/ng-animation.scss */
+.toggle.ng-hide-remove {
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 99, ../sass/ng-animation.scss */
+.toggle.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Top
+/* ------------------------------------------- */
+/* line 109, ../sass/ng-animation.scss */
+.slide-top {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 111, ../sass/ng-animation.scss */
+.slide-top.ng-enter {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 117, ../sass/ng-animation.scss */
+.slide-top.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+/* line 122, ../sass/ng-animation.scss */
+.slide-top.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 128, ../sass/ng-animation.scss */
+.slide-top.ng-leave-active {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  opacity: 0;
+}
+/* line 134, ../sass/ng-animation.scss */
+.slide-top.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 139, ../sass/ng-animation.scss */
+.slide-top.ng-hide-add.ng-hide-add-active {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  opacity: 0;
+}
+/* line 145, ../sass/ng-animation.scss */
+.slide-top.ng-hide-remove {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 151, ../sass/ng-animation.scss */
+.slide-top.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Rigth
+/* ------------------------------------------- */
+/* line 163, ../sass/ng-animation.scss */
+.slide-right {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 165, ../sass/ng-animation.scss */
+.slide-right.ng-enter {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 171, ../sass/ng-animation.scss */
+.slide-right.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 176, ../sass/ng-animation.scss */
+.slide-right.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 182, ../sass/ng-animation.scss */
+.slide-right.ng-leave-active {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  opacity: 0;
+}
+/* line 188, ../sass/ng-animation.scss */
+.slide-right.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 193, ../sass/ng-animation.scss */
+.slide-right.ng-hide-add.ng-hide-add-active {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  opacity: 0;
+}
+/* line 199, ../sass/ng-animation.scss */
+.slide-right.ng-hide-remove {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 205, ../sass/ng-animation.scss */
+.slide-right.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Left
+/* ------------------------------------------- */
+/* line 217, ../sass/ng-animation.scss */
+.slide-left {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 219, ../sass/ng-animation.scss */
+.slide-left.ng-enter {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 225, ../sass/ng-animation.scss */
+.slide-left.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 230, ../sass/ng-animation.scss */
+.slide-left.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 236, ../sass/ng-animation.scss */
+.slide-left.ng-leave-active {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  opacity: 0;
+}
+/* line 242, ../sass/ng-animation.scss */
+.slide-left.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 247, ../sass/ng-animation.scss */
+.slide-left.ng-hide-add.ng-hide-add-active {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  opacity: 0;
+}
+/* line 253, ../sass/ng-animation.scss */
+.slide-left.ng-hide-remove {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 259, ../sass/ng-animation.scss */
+.slide-left.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Down
+/* ------------------------------------------- */
+/* line 270, ../sass/ng-animation.scss */
+.slide-down {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 273, ../sass/ng-animation.scss */
+.slide-down.ng-enter {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 279, ../sass/ng-animation.scss */
+.slide-down.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+/* line 284, ../sass/ng-animation.scss */
+.slide-down.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 290, ../sass/ng-animation.scss */
+.slide-down.ng-leave-active {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  opacity: 0;
+}
+/* line 296, ../sass/ng-animation.scss */
+.slide-down.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 301, ../sass/ng-animation.scss */
+.slide-down.ng-hide-add.ng-hide-add-active {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  opacity: 0;
+}
+/* line 307, ../sass/ng-animation.scss */
+.slide-down.ng-hide-remove {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 313, ../sass/ng-animation.scss */
+.slide-down.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Top
+/* ------------------------------------------- */
+/* line 325, ../sass/ng-animation.scss */
+.bouncy-slide-top {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+/* line 328, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-enter {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 334, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+/* line 339, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 345, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-leave-active {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  opacity: 0;
+}
+/* line 351, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 356, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-hide-add.ng-hide-add-active {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  opacity: 0;
+}
+/* line 362, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-hide-remove {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 368, ../sass/ng-animation.scss */
+.bouncy-slide-top.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Rigth
+/* ------------------------------------------- */
+/* line 379, ../sass/ng-animation.scss */
+.bouncy-slide-right {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+/* line 382, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-enter {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 388, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 393, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 399, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-leave-active {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  opacity: 0;
+}
+/* line 405, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 410, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-hide-add.ng-hide-add-active {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  opacity: 0;
+}
+/* line 416, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-hide-remove {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 422, ../sass/ng-animation.scss */
+.bouncy-slide-right.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Left
+/* ------------------------------------------- */
+/* line 434, ../sass/ng-animation.scss */
+.bouncy-slide-left {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+/* line 437, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-enter {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 443, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 448, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 454, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-leave-active {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  opacity: 0;
+}
+/* line 460, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 465, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-hide-add.ng-hide-add-active {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  opacity: 0;
+}
+/* line 471, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-hide-remove {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 477, ../sass/ng-animation.scss */
+.bouncy-slide-left.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Down
+/* ------------------------------------------- */
+/* line 488, ../sass/ng-animation.scss */
+.bouncy-slide-down {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+/* line 491, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-enter {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 497, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+/* line 502, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 508, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-leave-active {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  opacity: 0;
+}
+/* line 514, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 519, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-hide-add.ng-hide-add-active {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  opacity: 0;
+}
+/* line 525, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-hide-remove {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 531, ../sass/ng-animation.scss */
+.bouncy-slide-down.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Scale Fade
+/* ------------------------------------------- */
+/* line 544, ../sass/ng-animation.scss */
+.scale-fade {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 547, ../sass/ng-animation.scss */
+.scale-fade.ng-enter {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 553, ../sass/ng-animation.scss */
+.scale-fade.ng-enter-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+/* line 558, ../sass/ng-animation.scss */
+.scale-fade.ng-leave {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 564, ../sass/ng-animation.scss */
+.scale-fade.ng-leave-active {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  opacity: 0;
+}
+/* line 570, ../sass/ng-animation.scss */
+.scale-fade.ng-hide-add {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 575, ../sass/ng-animation.scss */
+.scale-fade.ng-hide-add.ng-hide-add-active {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  opacity: 0;
+}
+/* line 581, ../sass/ng-animation.scss */
+.scale-fade.ng-hide-remove {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 587, ../sass/ng-animation.scss */
+.scale-fade.ng-hide-remove.ng-hide-remove-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Spin Fade
+/* ------------------------------------------- */
+/* line 598, ../sass/ng-animation.scss */
+.spin-toggle {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 601, ../sass/ng-animation.scss */
+.spin-toggle.ng-enter {
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 607, ../sass/ng-animation.scss */
+.spin-toggle.ng-enter-active {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  opacity: 1;
+}
+/* line 612, ../sass/ng-animation.scss */
+.spin-toggle.ng-leave {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 618, ../sass/ng-animation.scss */
+.spin-toggle.ng-leave-active {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  opacity: 0;
+}
+/* line 624, ../sass/ng-animation.scss */
+.spin-toggle.ng-hide-add {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 629, ../sass/ng-animation.scss */
+.spin-toggle.ng-hide-add.ng-hide-add-active {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  opacity: 0;
+}
+/* line 635, ../sass/ng-animation.scss */
+.spin-toggle.ng-hide-remove {
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 641, ../sass/ng-animation.scss */
+.spin-toggle.ng-hide-remove.ng-hide-remove-active {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Scale in Fade
+/* ------------------------------------------- */
+/* line 653, ../sass/ng-animation.scss */
+.scale-fade-in {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 656, ../sass/ng-animation.scss */
+.scale-fade-in.ng-enter {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 662, ../sass/ng-animation.scss */
+.scale-fade-in.ng-enter-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+/* line 667, ../sass/ng-animation.scss */
+.scale-fade-in.ng-leave {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 673, ../sass/ng-animation.scss */
+.scale-fade-in.ng-leave-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+/* line 679, ../sass/ng-animation.scss */
+.scale-fade-in.ng-hide-add {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 684, ../sass/ng-animation.scss */
+.scale-fade-in.ng-hide-add.ng-hide-add-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+/* line 690, ../sass/ng-animation.scss */
+.scale-fade-in.ng-hide-remove {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 696, ../sass/ng-animation.scss */
+.scale-fade-in.ng-hide-remove.ng-hide-remove-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Scale in Fade
+/* ------------------------------------------- */
+/* line 708, ../sass/ng-animation.scss */
+.bouncy-scale-in {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+/* line 711, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-enter {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  opacity: 0;
+}
+/* line 717, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-enter-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+/* line 722, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-leave {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  opacity: 1;
+}
+/* line 728, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-leave-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+/* line 734, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-hide-add {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  opacity: 1;
+}
+/* line 739, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-hide-add.ng-hide-add-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+/* line 745, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-hide-remove {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 751, ../sass/ng-animation.scss */
+.bouncy-scale-in.ng-hide-remove.ng-hide-remove-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Flip In
+/* ------------------------------------------- */
+/* line 763, ../sass/ng-animation.scss */
+.flip-in {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+/* line 766, ../sass/ng-animation.scss */
+.flip-in.ng-enter {
+  transform: perspective(300px) rotateX(90deg);
+  -ms-transform: perspective(300px) rotateX(90deg);
+  -webkit-transform: perspective(300px) rotateX(90deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 0.7;
+}
+/* line 772, ../sass/ng-animation.scss */
+.flip-in.ng-enter-active {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  opacity: 1;
+}
+/* line 777, ../sass/ng-animation.scss */
+.flip-in.ng-leave {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+/* line 783, ../sass/ng-animation.scss */
+.flip-in.ng-leave-active {
+  transform: perspective(300px) rotateX(135deg);
+  -ms-transform: perspective(300px) rotateX(135deg);
+  -webkit-transform: perspective(300px) rotateX(135deg);
+  opacity: 0.7;
+}
+/* line 789, ../sass/ng-animation.scss */
+.flip-in.ng-hide-add {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+/* line 794, ../sass/ng-animation.scss */
+.flip-in.ng-hide-add.ng-hide-add-active {
+  transform: perspective(300px) rotateX(135deg);
+  -ms-transform: perspective(300px) rotateX(135deg);
+  -webkit-transform: perspective(300px) rotateX(135deg);
+  opacity: 0;
+}
+/* line 800, ../sass/ng-animation.scss */
+.flip-in.ng-hide-remove {
+  transform: perspective(300px) rotateX(90deg);
+  -ms-transform: perspective(300px) rotateX(90deg);
+  -webkit-transform: perspective(300px) rotateX(90deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 806, ../sass/ng-animation.scss */
+.flip-in.ng-hide-remove.ng-hide-remove-active {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Rotate In
+/* ------------------------------------------- */
+/* line 817, ../sass/ng-animation.scss */
+.rotate-in {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+/* line 820, ../sass/ng-animation.scss */
+.rotate-in.ng-enter {
+  transform: perspective(300px) rotateY(40deg);
+  -ms-transform: perspective(300px) rotateY(40deg);
+  -webkit-transform: perspective(300px) rotateY(40deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 0.7;
+}
+/* line 826, ../sass/ng-animation.scss */
+.rotate-in.ng-enter-active {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  opacity: 1;
+}
+/* line 831, ../sass/ng-animation.scss */
+.rotate-in.ng-leave {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+/* line 837, ../sass/ng-animation.scss */
+.rotate-in.ng-leave-active {
+  transform: perspective(300px) rotateY(-40deg);
+  -ms-transform: perspective(300px) rotateY(-40deg);
+  -webkit-transform: perspective(300px) rotateY(-40deg);
+  opacity: 0.7;
+}
+/* line 843, ../sass/ng-animation.scss */
+.rotate-in.ng-hide-add {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+/* line 848, ../sass/ng-animation.scss */
+.rotate-in.ng-hide-add.ng-hide-add-active {
+  transform: perspective(300px) rotateY(-40deg);
+  -ms-transform: perspective(300px) rotateY(-40deg);
+  -webkit-transform: perspective(300px) rotateY(-40deg);
+  opacity: 0;
+}
+/* line 854, ../sass/ng-animation.scss */
+.rotate-in.ng-hide-remove {
+  transform: perspective(300px) rotateY(40deg);
+  -ms-transform: perspective(300px) rotateY(40deg);
+  -webkit-transform: perspective(300px) rotateY(40deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 860, ../sass/ng-animation.scss */
+.rotate-in.ng-hide-remove.ng-hide-remove-active {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  opacity: 1;
+}
+/*
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+
+
+ */
+
