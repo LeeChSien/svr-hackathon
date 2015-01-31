@@ -13,7 +13,14 @@ class DishesController < ApplicationController
 
   def list
     @dishes = Dish.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
-    render json: @dishes.map {|dish| dish.get_object}
+    render json: @dishes.map {|dish|
+      dish.get_object.merge({
+        like_status: {
+          liked: current_user ? current_user.voted_as_when_voted_for(dish) : nil,
+          likes: dish.get_likes.size
+        }
+      })
+    }
   end
 
   def comments

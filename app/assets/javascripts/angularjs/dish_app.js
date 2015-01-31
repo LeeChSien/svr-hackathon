@@ -17,12 +17,14 @@
     $scope.init = function(dish) {
       if (dish && $scope.dish == null) {
         $scope.dish = angular.copy(dish, $scope.dish);
-
+        $scope.like_status = $scope.dish.like_status;
+/*
         $http.post('/dishes/' + $scope.dish.id + '/like', {
           action_type: 'status'
         }).success(function(content) {
           $scope.like_status = content;
         });
+*/
       }
     };
 
