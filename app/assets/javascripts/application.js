@@ -31,5 +31,6 @@
 //= require moment
 //= require moment/locale/zh-tw
 //= require angular-moment
+//= require angular-dragdrop
 
 //= require_tree ./angularjs

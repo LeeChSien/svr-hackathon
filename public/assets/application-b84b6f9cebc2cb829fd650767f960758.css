@@ -873,7 +873,7 @@ body {
 }
 
 /* line 91, /Users/chsienlee/RailsWorkspace/svr-hackathon/app/assets/stylesheets/dishes.scss */
-.file-input-name {
+.post-dish-form .file-input-name {
   display: none;
 }
 

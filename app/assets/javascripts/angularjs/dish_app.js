@@ -127,6 +127,7 @@
         $scope.remove(collection_index, dish);
       } else {
         $scope.add(collection_index, dish);
+        $scope.collections[collection_index].dishes.push();
       }
     };
 
