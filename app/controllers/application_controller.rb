@@ -17,4 +17,23 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     dishes_url
   end
+
+  def ws_cluster_infos
+    memcached_host = ChatSetting.instance.memcached_host
+    ws_cluster = ChatSetting.instance.ws_cluster
+
+    dalli = Dalli::Client.new(memcached_host)
+    ws_cluster.map do |hostname|
+      dalli.get("#{hostname}-info")
+    end
+  end
+
+  def shortest_first_of_ws_cluster
+    cluster = ws_cluster_infos
+    host_candidate = cluster[0]
+    cluster.each { |host| host_candidate = host if host_candidate[:connections] > host[:connections] }
+
+    return host_candidate[:hostname].include?('localhost') ?
+    host_candidate.merge!(url: 'localhost:5000') : host_candidate.merge!(url: "#{host_candidate[:hostname]}.herokuapp.com")
+  end
 end

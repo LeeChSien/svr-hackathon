@@ -74,4 +74,5 @@
 <script>
   var CurrentUser = <%= current_user.get_object.to_json.html_safe %>;
   var Dish = <%= @dish.get_object.to_json.html_safe %>;
+  var ChatCluster = <%= @cluster.to_json.html_safe %>;
 </script>

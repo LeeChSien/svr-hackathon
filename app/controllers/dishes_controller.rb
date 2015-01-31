@@ -26,6 +26,7 @@ class DishesController < ApplicationController
   end
 
   def show
+    @cluster = shortest_first_of_ws_cluster
     respond_with(@dish)
   end
 

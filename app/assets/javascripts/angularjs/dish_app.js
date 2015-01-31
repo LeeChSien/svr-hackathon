@@ -1,7 +1,7 @@
 (function() {
   var dishApp = angularApplication.module('dishApp',
     ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput',
-     'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment']);
+     'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket']);
 
   dishApp.run(function(amMoment) {
     amMoment.changeLocale('zh-tw');
@@ -92,8 +92,8 @@
     });
   }]);
 
-  dishApp.controller('commentDishCtrl', ['$scope', '$http', '$element', 'notify',
-  function($scope, $http, $element, notify) {
+  dishApp.controller('commentDishCtrl', ['$scope', '$http', '$element', '$websocket', '$interval',
+  function($scope, $http, $element, $websocket, $interval) {
 
     $scope.comments = [];
     $scope.model = {comment: ''};
@@ -114,7 +114,30 @@
 
       });
 
+      var time_now = Date.now();
+      stream.send(JSON.stringify({
+        m_type: 'comment',
+        body: $scope.model.comment,
+        created_at: time_now,
+        user: CurrentUser
+      }));
+
       $scope.model.comment = '';
     };
+
+    var stream, ping;
+    stream = $websocket('ws://' + ChatCluster.url + '/' + Dish.fingerprint);
+    stream.onMessage(function(message) {
+      m = JSON.parse(message.data);
+
+      if (m.m_type == 'comment')
+        $scope.comments.push.apply($scope.comments, [m]);
+    });
+
+    ping = $interval(function() {
+      stream.send({m_type: 'ping'});
+    }, 5000);
+
+
   }]);
 })();
