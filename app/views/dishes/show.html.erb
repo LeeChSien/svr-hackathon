@@ -6,6 +6,13 @@
           <a href="#" class="dish-photo">
             <img src="<%= @dish.photo %>">
           </a>
+          <div class="panel-info">
+            <h3>Restaurants Name</h3>
+            <h5>Address</h5>
+            <div class="restaurant-map">
+              embed map here
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -28,14 +35,17 @@
               <button type="button" class="btn btn-default btn-sm" ng-click="like_toggle()"><i class="fa {{like_status.liked ? 'fa-heart' : 'fa-heart-o'}}"></i>
                 {{like_status.likes}}
               </button>
-              
+
               <button type="button" class="btn btn-default btn-sm pull-right" ng-click="openManageCollections(dish)">收藏至 <span class="caret"></span></button>
             </div>
           </div>
         </div>
       </div>
-      <div class="panel panel-default" ng-controller="commentDishCtrl">
+      
+      <div class="panel panel-default dish-comment" ng-controller="commentDishCtrl">
         <div class="panel-heading">即時討論</div>
+      <div class="panel panel-default dish-comment" ng-controller="commentDishCtrl">
+        <div class="panel-heading">留言</div>
         <div class="panel-body">
           <div ng-repeat="comment in comments" ng-class="'slide-left'">
             <div class="comment">
