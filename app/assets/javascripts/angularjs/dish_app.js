@@ -258,7 +258,7 @@
     };
 
     var stream, ping;
-    stream = $websocket('ws://' + ChatCluster.url + '/' + Dish.fingerprint);
+    stream = $websocket('wss://' + ChatCluster.url + '/' + Dish.fingerprint);
     stream.onMessage(function(message) {
       m = JSON.parse(message.data);
 
