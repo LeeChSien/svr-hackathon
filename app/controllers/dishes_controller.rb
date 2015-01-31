@@ -17,7 +17,7 @@ class DishesController < ApplicationController
   end
 
   def comments
-    render json: @dish.comment_threads.map {|c| c.get_object}
+    render json: @dish.comment_threads.order('created_at').map {|c| c.get_object}
   end
 
   def comment

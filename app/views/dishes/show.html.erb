@@ -44,7 +44,7 @@
       <div class="panel panel-default" ng-controller="commentDishCtrl">
         <div class="panel-heading">留言</div>
         <div class="panel-body">
-          <div ng-repeat="comment in comments | orderBy: 'created_at'">
+          <div ng-repeat="comment in comments">
             <div class="comment">
               <h5 class="pull-left">
                 <img ng-src="{{comment.user.avatar_url}}" alt="{{comment.user.name}}" class="img-circle" width="30" height="30">

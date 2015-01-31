@@ -130,8 +130,10 @@
     stream.onMessage(function(message) {
       m = JSON.parse(message.data);
 
-      if (m.m_type == 'comment')
+      if (m.m_type == 'comment') {
         $scope.comments.push.apply($scope.comments, [m]);
+        console.log($scope.comments);
+      }
     });
 
     ping = $interval(function() {
