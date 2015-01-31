@@ -11,11 +11,11 @@
   }]);
 
   dishApp.controller('dishCtrl', ['$scope', '$http', function($scope, $http) {
-    $scope.dish = {};
+    $scope.dish = null;
     $scope.like_status = {};
 
     $scope.init = function(dish) {
-      if (dish) {
+      if (dish && $scope.dish == null) {
         $scope.dish = angular.copy(dish, $scope.dish);
 
         $http.post('/dishes/' + $scope.dish.id + '/like', {
