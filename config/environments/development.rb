@@ -46,5 +46,5 @@ Rails.application.configure do
   end
 
   ChatSetting.instance.ws_cluster = ['localhost']
-  ChatSetting.instance.memcached_host = 'localhost:11211'
+  ChatSetting.instance.memcached_host = '54.175.76.89:11211'
 end

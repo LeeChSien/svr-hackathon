@@ -6,6 +6,13 @@
           <a href="#" class="dish-photo">
             <img src="<%= @dish.photo %>">
           </a>
+          <div class="panel-info">
+            <h3>Restaurants Name</h3>
+            <h5>Address</h5>
+            <div class="restaurant-map">
+              embed map here
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -41,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-default" ng-controller="commentDishCtrl">
+      <div class="panel panel-default dish-comment" ng-controller="commentDishCtrl">
         <div class="panel-heading">留言</div>
         <div class="panel-body">
           <div ng-repeat="comment in comments | orderBy: 'created_at'">
