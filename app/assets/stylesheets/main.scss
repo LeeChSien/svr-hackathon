@@ -17,10 +17,34 @@ a {
   color: $color-primary-gray;
 }
 
+
 .btn-success {
-  background-color: red;
-  border-color: red;
+  background-color: $color-primary-red;
+  border-color: $color-primary-red;
 }
+.btn-success:hover {
+  background-color: $color-secondary-red;
+  border-color: $color-secondary-red;
+}
+
+.btn-warning {
+  background-color: $color-primary-background;
+  border-color: $color-primary-background;
+}
+.btn-warning:hover {
+  background-color: $color-secondary-background;
+  border-color: $color-secondary-background;
+}
+
+.btn-info {
+  background-color: $color-primary-gray;
+  border-color: $color-primary-gray;
+}
+.btn-info:hover {
+  background-color: $color-secondary-gray;
+  border-color: $color-secondary-gray;
+}
+
 
 nav.navbar {
   background-color: $color-primary-gray;

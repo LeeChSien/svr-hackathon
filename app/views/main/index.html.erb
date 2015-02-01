@@ -5,7 +5,7 @@
       <h1>與其碰運氣，不如找友去</h1>
       <h3>在朋友的口袋清單中探索你要的餐廳</h3>
       <div class="cta-button">
-        <a href="<%= dishes_url%>" class="btn btn-lg btn-warning">看看朋友的美食口袋清單</a>
+        <a href="<%= dishes_url%>" class="btn btn-lg btn-success">看看朋友的美食口袋清單</a>
       </div>
     </div>
   </div>
@@ -24,25 +24,31 @@
     <div class="row">
       <h1>約會餐廳哪裡好？</h1>
       <h3>依照餐廳情境搜尋好友曾經去過的餐廳</h3>
-      <div class="col-xs-8 col-xs-offset-2 scene_pic">
-        <img src="/scene1.png">
-<!--         <div class="col-xs-12 col-sm-4">pic 1</div>
-        <div class="col-xs-12 col-sm-4">pic 2</div>
-        <div class="col-xs-12 col-sm-4">pic 3</div> -->
+      <!-- <div class="col-xs-8 col-xs-offset-2 scene_pic"> -->
+        <!-- <img src="/scene1.png"> -->
+        <div class="col-xs-12 col-sm-4"><h5 class="text-center">小酌片刻</h5><img src="<%= asset_path 'scene_1.png' %>"></div>
+        <div class="col-xs-12 col-sm-4"><h5 class="text-center">教庭聚餐</h5><img src="<%= asset_path 'scene_2.png' %>"></div>
+        <div class="col-xs-12 col-sm-4"><h5 class="text-center">歡慶聖誕</h5><img src="<%= asset_path 'scene_3.png' %>"></div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="demo1-block block">
+<div class="demo-block demo1-block block">
   <div class="container">
     <div class="row">
+      <div class="landing-note">
+        <h3>打開首頁，看看朋友們最近又吃了些什麼好料</h3>
+      </div>
     </div>
   </div>
 </div>
-<div class="demo2-block block">
+<div class="demo-block demo2-block block">
   <div class="container">
     <div class="row">
+      <div class="landing-note">
+        <h3>到朋友的個人頁面，查看他的美食口袋清單</h3>
+      </div>
     </div>
   </div>
 </div>
@@ -51,7 +57,7 @@
   <div class="container">
     <div class="row">
       <div class="cta-button">
-        <a href="<%= dishes_url%>">看看朋友的美食口袋清單</a>
+        <a href="<%= dishes_url%>" class="btn btn-lg btn-success">看看朋友的美食口袋清單</a>
       </div>
     </div>
   </div>
