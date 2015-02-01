@@ -5,8 +5,8 @@ source 'https://rails-assets.org'
 gem 'rails', '4.2.0'
 
 group :development do
-#  gem 'sqlite3'
-   gem 'pg'
+  gem 'sqlite3'
+#  gem 'pg'
 end
 
 group :production do
