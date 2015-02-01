@@ -10,7 +10,7 @@
 <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
       <li class="<%= page_active?('dishes#index') %>">
-        <a href="<%= dishes_url %>">探索</a>
+        <a href="<%= dishes_url %>"><i class="fa fa-compass"></i> 探索</a>
       </li>
     </ul>
 
@@ -19,24 +19,37 @@
       <li class="<%= page_active?('devise/user_registrations#new') %>"><a href="<%= new_user_registration_path %>">註冊</a></li>
       <li class="<%= page_active?('devise/user_sessions#new') %>"><a href="<%= new_user_session_path %>">登入</a></li>
 <% else %>
-      <li class="<%= page_active?('collections#index') %>"><a href="/collections">我的收藏</a></li>
-      <li><a href="#"><i class="fa fa-globe"></i> 通知</a></li>
-      <li><a href="<%= destroy_user_session_path %>">登出</a></li>
+      <li class="<%= page_active?('collections#index') %>">
+        <a href="/collections"><i class="fa fa-bookmark"></i> 我的收藏</a>
+      </li>
+      <li>
+        <a href="#" class="dropdown-toggle" dropdown-toggle><i class="fa fa-globe"></i> 通知</a>
+      </li>
+      <li>
+        <a href="<%= destroy_user_session_path %>">登出</a>
+      </li>
 <% end %>
     </ul>
 
-    <form class="navbar-form navbar-right" role="search">
+    <form action="/dishes/search" class="navbar-form navbar-right" role="search" methd="get" ng-controller="searchFormCtrl">
+      <button class="btn btn-warning btn-sm" type="button" ng-click="searchTag('牛排')">牛排</button>
+      <button class="btn btn-warning btn-sm" type="button" ng-click="searchTag('義式')">義式</button>
+      <button class="btn btn-warning btn-sm" type="button" ng-click="searchTag('咖啡')">咖啡</button>
+      <button class="btn btn-warning btn-sm" type="button" ng-click="searchTag('火鍋')">火鍋</button>
+
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="你想吃什麼...">
+        <input type="text" ng-model="keyword" name="keyword" class="form-control" placeholder="你想吃什麼...">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+          <button class="btn btn-default" type="button" ng-click="submit()"><i class="fa fa-search"></i></button>
         </span>
       </div><!-- /input-group -->
     </form>
 </div>
 
     <div class="nav navbar-nav icon-bar pull-right visible-xs">
+<!--
       <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+-->
 
       <% if !user_signed_in? %>
 <a href="<%= new_user_session_path %>" class="btn btn-default"><i class="fa fa-sign-in"></i> 登入</a>

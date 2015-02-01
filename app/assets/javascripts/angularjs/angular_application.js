@@ -22,6 +22,23 @@ var angularApplication = (function() {
         };
       });
 
+      new_app.controller('searchFormCtrl', ['$scope', '$element', '$http',
+      function($scope, $element, $http) {
+        $scope.keyword = '';
+        if (typeof Keyword !== 'undefined')
+          $scope.keyword = Keyword;
+
+        $scope.submit = function() {
+          if ($scope.keyword.length > 0)
+            $element.submit();
+        };
+
+        $scope.searchTag = function(tag) {
+          $scope.keyword = tag;
+          window.location = '/dishes/search?keyword=' + tag;
+        };
+      }]);
+
       return new_app;
     }
   };

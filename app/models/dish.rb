@@ -10,6 +10,21 @@ class Dish < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
+  ### 3RD LIBRARY:
+  searchable do
+    text :tags do
+      tag_list.join(' ')
+    end
+
+    text :store_name do
+      store_name
+    end
+
+    text :description do
+      description
+    end
+  end
+
   def get_object(u=nil)
     attributes.merge({
       tag_view:  tag_view,

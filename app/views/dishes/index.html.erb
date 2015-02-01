@@ -34,8 +34,8 @@
             </div>
             <hr>
             <div>
-              <a ng-href="/dishes/{{card.id}}">
-                <h5>餐廳名稱</h5>
+              <a ng-href="/dishes/{{card.id}}" style="display:inline">
+                <h5 style="display:inline"> {{card.store_name}} </h5>
               </a>
               <span class="tag" ng-bind-html="card.tag_view"></span>
             </div>
@@ -62,6 +62,9 @@
 <%= render partial: 'manage_collections_modal' %>
 
 <script>
+<% if @keyword %>
+  var Keyword = "<%= @keyword %>";
+<% end %>
   var CurrentUser = <%= (current_user ? current_user.get_object : {}).to_json.html_safe %>;
   var Collections = <%= (current_user ? current_user.collections.map {|c| c.get_object} : []).to_json.html_safe %>;
 </script>

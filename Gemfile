@@ -5,8 +5,8 @@ source 'https://rails-assets.org'
 gem 'rails', '4.2.0'
 
 group :development do
-  gem 'sqlite3'
-#  gem 'pg'
+#  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :production do
@@ -105,6 +105,10 @@ gem 'sunspot_solr'
 
 # A Ruby terminal progress_bar
 gem 'progress_bar'
+
+# A Ruby library for generating identicon.
+gem "rmagick", :require => false
+gem 'quilt'
 
 # Rails Assets is the frictionless proxy between Bundler and Bower.
 gem 'rails-assets-angular'
