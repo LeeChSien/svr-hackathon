@@ -60,6 +60,9 @@
 <%= render partial: 'manage_collections_modal' %>
 
 <script>
+<% if @keyword %>
+  var Keyword = "<%= @keyword %>";
+<% end %>
   var CurrentUser = <%= (current_user ? current_user.get_object : {}).to_json.html_safe %>;
   var Collections = <%= (current_user ? current_user.collections.map {|c| c.get_object} : []).to_json.html_safe %>;
 </script>

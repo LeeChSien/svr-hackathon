@@ -11,11 +11,23 @@ class DishesController < ApplicationController
     respond_with(@dishes)
   end
 
+  def search
+    @dish = Dish.new
+    @keyword = params[:keyword]
+    render :index
+  end
+
   def list
     @dishes = []
 
     if params[:user_id]
       @dishes = User.find(params[:user_id]).dishes
+    elsif params[:keyword]
+      dishes_search = Dish.search {
+        fulltext params[:keyword]
+        paginate :page => params[:page] ||= 1, :per_page => 30
+      }
+      @dishes = dishes_search ? dishes_search.results : []
     else
       @dishes = Dish.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
     end

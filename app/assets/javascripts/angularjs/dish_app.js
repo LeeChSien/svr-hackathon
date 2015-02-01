@@ -76,7 +76,7 @@
 
     $scope.page     = 1;
     $scope.visit_user = null;
-    $scope.keywords = '';
+    $scope.keyword  = '';
     $scope.dishes   = [];
 
     $scope.busy = false;
@@ -101,7 +101,10 @@
     };
 
     $scope.initIndex = function() {
-      //
+      if (typeof Keyword !== 'undefined') {
+        $scope.keyword = Keyword;
+        $scope.extra_query = "&keyword=" + $scope.keyword;
+      }
     };
 
     $scope.initVisit = function() {
