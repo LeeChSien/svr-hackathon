@@ -1,6 +1,7 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variable';
 
 html, body {
   height: 100%;
@@ -8,70 +9,14 @@ html, body {
   background-color: #faefee;
 }
 
-// LANDING PAGE
-
-.landing img {
-  width: 100%;
+nav.navbar {
+  background-color: $color-primary-gray;
 }
 
-.block {
-  min-height: 90%;
+.navbar-brand {
+  padding: 3px;
 
-  .large-h1 {
-    font-size: 4em;
-  }
-  h1, h2, h3, h4, h5, .cta-button {
-    text-align: center;
-  }
-  .cta-button {
-    margin-top: 90px;
-  }
-
-  h1 {
-    font-weight: bold;
-  }
-}
-
-.landing-block {
-  margin-top: -20px;
-  background: url("/landing_bg.gif") center center no-repeat;
-  background-size: cover;
-  padding-top: 10%;
-  color: #fff;
-
-  .btn-lg {
-    font-size: 23px;
-  }
-}
-
-/* .explain-block {
-  background: url("/explain.png") center center no-repeat;
-  background-size: cover;
-} */
-
-.scene-block {
   img {
-    margin:20px 0 30px 0;
-  }
-}
-
-.demo1-block {
-  margin-top: 30px;
-  background: url("/demo1.gif") center center no-repeat;
-  background-size: contain;
-}
-
-.demo2-block {
-  margin-top: 30px;
-  background: url("/demo2.png") center center no-repeat;
-  background-size: contain;
-}
-
-.call_to_action-block {
-  min-height: 300px !important;
-
-  .btn-lg {
-    margin-top: 10px;
-    font-size: 30px;
+    height: 100%;
   }
 }
