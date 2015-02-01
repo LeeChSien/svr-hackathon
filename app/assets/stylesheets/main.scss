@@ -1,12 +1,25 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'variable';
+@import 'css_var';
 
 html, body {
   height: 100%;
-  font-family: Microsoft JhengHei;
-  background-color: #faefee;
+  font-family: $font-family-primary;
+  background-color: $color-primary-background;
+}
+
+h1, h2, h3, h4, h5, h6, a, p, span {
+  font-family: $font-family-primary;
+}
+
+a {
+  color: $color-primary-gray;
+}
+
+.btn-success {
+  background-color: red;
+  border-color: red;
 }
 
 nav.navbar {

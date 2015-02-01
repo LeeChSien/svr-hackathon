@@ -1,0 +1,67 @@
+// LANDING PAGE
+
+.landing img {
+  width: 100%;
+}
+
+.block {
+  min-height: 90%;
+
+  .large-h1 {
+    font-size: 4em;
+  }
+  h1, h2, h3, h4, h5, .cta-button {
+    text-align: center;
+  }
+  .cta-button {
+    margin-top: 90px;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+}
+
+.landing-block {
+  margin-top: -20px;
+  background: url("/landing_bg.gif") center center no-repeat;
+  background-size: cover;
+  padding-top: 10%;
+  color: #fff;
+
+  .btn-lg {
+    font-size: 23px;
+  }
+}
+
+/* .explain-block {
+  background: url("/explain.png") center center no-repeat;
+  background-size: cover;
+} */
+
+.scene-block {
+  img {
+    margin:20px 0 30px 0;
+  }
+}
+
+.demo1-block {
+  margin-top: 30px;
+  background: url("/demo1.gif") center center no-repeat;
+  background-size: contain;
+}
+
+.demo2-block {
+  margin-top: 30px;
+  background: url("/demo2.png") center center no-repeat;
+  background-size: contain;
+}
+
+.call_to_action-block {
+  min-height: 300px !important;
+
+  .btn-lg {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+}
