@@ -259,15 +259,24 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+<<<<<<< HEAD
     sqlite3 (1.3.10)
     sunspot (2.1.0)
+=======
+    sunspot (2.1.1)
+>>>>>>> eeabc723166fcfea791740ddabafffba50f696e1
       pr_geohash (~> 1.0)
       rsolr (~> 1.0.7)
-    sunspot_rails (2.1.0)
+    sunspot_rails (2.1.1)
       nokogiri
       rails (>= 3)
+<<<<<<< HEAD
       sunspot (= 2.1.0)
     sunspot_solr (2.1.1)
+=======
+      sunspot (= 2.1.1)
+    sunspot_solr (2.1.0)
+>>>>>>> eeabc723166fcfea791740ddabafffba50f696e1
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -338,8 +347,12 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simple_form
   spring
+<<<<<<< HEAD
   sqlite3
   sunspot_rails (= 2.1.0)
+=======
+  sunspot_rails
+>>>>>>> eeabc723166fcfea791740ddabafffba50f696e1
   sunspot_solr
   thin
   turbolinks

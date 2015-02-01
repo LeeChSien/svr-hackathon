@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :dishes do
     collection do
       get 'list'
+      get 'search'
     end
 
     member do

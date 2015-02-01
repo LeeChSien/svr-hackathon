@@ -23,10 +23,10 @@
       <div class="panel panel-default" ng-controller="dishCtrl" ng-init="init(dishes[0])">
         <div class="panel-body">
           <div class="panel-info">
-            <h4>
+            <a href="/user/<%= @dish.user.id %>"><h4>
               <img src="<%= @dish.user.avatar_url %>" alt="<%= @dish.user.name %>" class="img-circle" width="40" height="40">
               <%= @dish.user.name %>
-            </h4>
+            </h4></a>
             <p class="dish-description">
               <%= @dish.tag_view.html_safe %>
             <p>
@@ -37,6 +37,7 @@
               <button type="button" class="btn btn-default btn-sm" ng-click="like_toggle()"><i class="fa {{like_status.liked ? 'fa-heart' : 'fa-heart-o'}}"></i>
                 {{like_status.likes}}
               </button>
+              <button class="btn btn-defaut btn-sm" am-time-ago="dish.created_at" disabled="disabled"></button>
 
               <button type="button" class="btn btn-default btn-sm pull-right" ng-click="openManageCollections(dish)">收藏至 <span class="caret"></span></button>
             </div>
