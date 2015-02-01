@@ -12,7 +12,14 @@ class DishesController < ApplicationController
   end
 
   def list
-    @dishes = Dish.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+    @dishes = []
+
+    if params[:user_id]
+      @dishes = User.find(params[:user_id]).dishes
+    else
+      @dishes = Dish.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+    end
+
     render json: @dishes.map {|dish| dish.get_object(current_user)}
   end
 

@@ -75,12 +75,13 @@
     $scope.selected_dish = [];
 
     $scope.page     = 1;
+    $scope.visit_user = null;
     $scope.keywords = '';
     $scope.dishes   = [];
 
     $scope.busy = false;
     $scope.end = false;
-
+    $scope.extra_query = ''
 
     $scope.nextPage = function() {
       if ($scope.busy || $scope.end)
@@ -88,7 +89,7 @@
 
       $scope.busy = true;
 
-      $http.get('/dishes/list?page=' + $scope.page).
+      $http.get('/dishes/list?page=' + $scope.page + $scope.extra_query).
       success(function(content) {
         $scope.dishes.push.apply($scope.dishes, content);
         $scope.page += 1;
@@ -101,6 +102,11 @@
 
     $scope.initIndex = function() {
       //
+    };
+
+    $scope.initVisit = function() {
+      $scope.visit_user = User;
+      $scope.extra_query = "&user_id=" + $scope.visit_user.id;
     };
 
     $scope.initShow = function() {

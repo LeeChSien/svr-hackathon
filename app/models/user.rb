@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   def get_object
     {
       name: name,
-      avatar_url: avatar_url
+      avatar_url: avatar_url,
+      id: id
     }
   end
 
