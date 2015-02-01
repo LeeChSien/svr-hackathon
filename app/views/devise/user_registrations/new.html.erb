@@ -28,6 +28,10 @@
           </div>
 
           <div class="form-group">
+            <%= f.input_field :avatar, :accept => "image/*", :'bootstrap-file-input' => "true", title: "上傳大頭照" %>
+          </div>
+
+          <div class="form-group">
             <%= f.input_field :password, class: "form-control", placeholder: "密碼",
               :'ng-model' => "model.password", :'validator' => "[required]" %>
           </div>

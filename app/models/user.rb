@@ -9,10 +9,13 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  mount_uploader :avatar, AvatarUploader
+
   def get_object
     {
       name: name,
-      avatar_url: avatar_url
+      avatar_url: avatar_url,
+      id: id
     }
   end
 

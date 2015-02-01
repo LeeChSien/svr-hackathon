@@ -94,6 +94,18 @@ gem 'carrierwave'
 # Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline.
 gem 'cloudinary'
 
+## Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate'
+
+# Apache Solr full-text search engine
+gem 'sunspot_rails', '2.1.0'
+
+# optional pre-packaged Solr distribution for use in development
+gem 'sunspot_solr'
+
+# A Ruby terminal progress_bar
+gem 'progress_bar'
+
 # Rails Assets is the frictionless proxy between Bundler and Bower.
 gem 'rails-assets-angular'
 gem 'rails-assets-angular-sanitize'
@@ -111,3 +123,5 @@ gem 'rails-assets-ngDialog'
 gem 'rails-assets-angular-websocket', '1.0.5'
 gem 'rails-assets-angular-moment'
 gem 'rails-assets-angular-dragdrop'
+gem 'rails-assets-angular-prompt'
+gem 'rails-assets-ngInfiniteScroll'

@@ -1,6 +1,6 @@
 (function() {
   var dishApp = angularApplication.module('dishApp',
-    ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput',
+    ['ngSanitize', 'ui.bootstrap', 'akoenig.deckgrid', 'cgNotify', 'ngDialog', 'ngTagsInput', 'infinite-scroll',
      'monospaced.elastic', 'ngUpload', 'validator', 'validator.rules.zh', 'angularMoment', 'ngWebSocket', 'ngAnimate']);
 
   dishApp.run(function(amMoment) {
@@ -11,18 +11,20 @@
   }]);
 
   dishApp.controller('dishCtrl', ['$scope', '$http', function($scope, $http) {
-    $scope.dish = {};
+    $scope.dish = null;
     $scope.like_status = {};
 
     $scope.init = function(dish) {
-      if (dish) {
+      if (dish && $scope.dish == null) {
         $scope.dish = angular.copy(dish, $scope.dish);
-
+        $scope.like_status = $scope.dish.like_status;
+/*
         $http.post('/dishes/' + $scope.dish.id + '/like', {
           action_type: 'status'
         }).success(function(content) {
           $scope.like_status = content;
         });
+*/
       }
     };
 
@@ -73,13 +75,38 @@
     $scope.selected_dish = [];
 
     $scope.page     = 1;
+    $scope.visit_user = null;
     $scope.keywords = '';
-    $scope.dishes   = []
+    $scope.dishes   = [];
+
+    $scope.busy = false;
+    $scope.end = false;
+    $scope.extra_query = ''
+
+    $scope.nextPage = function() {
+      if ($scope.busy || $scope.end)
+        return;
+
+      $scope.busy = true;
+
+      $http.get('/dishes/list?page=' + $scope.page + $scope.extra_query).
+      success(function(content) {
+        $scope.dishes.push.apply($scope.dishes, content);
+        $scope.page += 1;
+        $scope.busy = false;
+
+        if (content.length < 30)
+          $scope.end = true;
+      });
+    };
 
     $scope.initIndex = function() {
-      $http.get('/dishes/list').success(function(content) {
-        $scope.dishes.push.apply($scope.dishes, content);
-      });
+      //
+    };
+
+    $scope.initVisit = function() {
+      $scope.visit_user = User;
+      $scope.extra_query = "&user_id=" + $scope.visit_user.id;
     };
 
     $scope.initShow = function() {
@@ -89,6 +116,7 @@
     $scope.addCollection = function(content) {
       $scope.collections.push.apply($scope.collections, [content]);
     };
+
 
   }]);
 
@@ -127,6 +155,7 @@
         $scope.remove(collection_index, dish);
       } else {
         $scope.add(collection_index, dish);
+        $scope.collections[collection_index].dishes.push();
       }
     };
 
@@ -237,7 +266,7 @@
     };
 
     var stream, ping;
-    stream = $websocket('ws://' + ChatCluster.url + '/' + Dish.fingerprint);
+    stream = $websocket('wss://' + ChatCluster.url + '/' + Dish.fingerprint);
     stream.onMessage(function(message) {
       m = JSON.parse(message.data);
 

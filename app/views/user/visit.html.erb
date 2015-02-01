@@ -1,35 +1,35 @@
-<div class="container" ng-controller="pageCtrl" ng-init="initIndex()" ng-cloak>
+<div class="container" ng-controller="pageCtrl" ng-init="initVisit()" ng-cloak>
   <div ng-controller="wallCtrl" class="wall"
-    infinite-scroll="nextPage()" infinite-scroll-distance="0">
+  infinite-scroll="nextPage()" infinite-scroll-distance="0">
 
-    <div deckgrid class="deckgrid dish" source="dishes">
-      <div class="panel panel-default" ng-controller="dishCtrl" ng-init="init(card)">
-        <div class="panel-body">
-          <a ng-href="/dishes/{{card.id}}" class="dish-photo">
-            <img src="" data-ng-src="{{card.photo_url}}">
-          </a>
-          <div class="panel-info">
-            <a ng-href="/user/{{card.user.id}}"><h4>
-              <img ng-src="{{card.user.avatar_url}}" alt="{{card.user.name}}" class="img-circle" width="40" height="40">
-              {{ card.user.name }}
-            </h4></a>
-            <p class="dish-description">
-              {{ card.description }}
-            <p>
+  <div deckgrid class="deckgrid dish" source="dishes">
+    <div class="panel panel-default" ng-controller="dishCtrl" ng-init="init(card)">
+      <div class="panel-body">
+        <a ng-href="/dishes/{{card.id}}" class="dish-photo">
+          <img src="" data-ng-src="{{card.photo_url}}">
+        </a>
+        <div class="panel-info">
+          <h4>
+            <img ng-src="{{card.user.avatar_url}}" alt="{{card.user.name}}" class="img-circle" width="40" height="40">
+            {{ card.user.name }}
+            <span class="pull-right" am-time-ago="card.created_at"><span>
+          </h4>
+          <p class="dish-description">
+            {{ card.description }}
+          <p>
 
             <div class="dish-interaction">
               <a ng-href="/dishes/{{card.id}}" class="btn btn-default btn-sm"><i class="fa fa-comments"></i> {{card.comments_size}}</a>
 
-<% if current_user %>
+              <% if current_user %>
               <button type="button" class="btn btn-default btn-sm" ng-click="like_toggle()"><i class="fa {{like_status.liked ? 'fa-heart' : 'fa-heart-o'}}"></i>
                 {{like_status.likes}}
               </button>
               <button type="button" class="btn btn-default btn-sm pull-right" ng-click="mother.openManageCollections(card)">收藏至 <span class="caret"></span></button>
-<% else %>
+              <% else %>
               <a class="btn btn-default btn-sm" href="<%= new_user_session_path %>"><i class="fa fa-heart-o"></i> {{like_status.likes}}</a>
               <a class="btn btn-default btn-sm pull-right" href="<%= new_user_session_path %>">收藏至 <span class="caret"></span></a>
-<% end %>
-              <button class="btn btn-defaut btn-sm" am-time-ago="card.created_at" disabled="disabled"></button>
+              <% end %>
 
             </div>
             <hr>
@@ -44,22 +44,17 @@
       </div>
     </div>
   </div>
-<% if current_user %>
-  <button id="upload-btn" type="button" class="btn btn-success btn-lg"
-    ng-click="openPostDish()">分享美食</button>
-<% else %>
-  <a id="upload-btn" type="button" class="btn btn-success btn-lg" href="<%= new_user_session_path %>">分享美食</a>
-<% end %>
-<div class="timeline-loader" ng-if="busy && !end">
-  <i class="fa fa-refresh fa-spin fa-4"></i>
-</div>
+
+  <div class="timeline-loader" ng-if="busy && !end">
+    <i class="fa fa-refresh fa-spin fa-4"></i>
+  </div>
 
 </div>
 
-<%= render partial: 'post_dish_modal' %>
-<%= render partial: 'manage_collections_modal' %>
+<%= render partial: 'dishes/manage_collections_modal' %>
 
 <script>
   var CurrentUser = <%= (current_user ? current_user.get_object : {}).to_json.html_safe %>;
   var Collections = <%= (current_user ? current_user.collections.map {|c| c.get_object} : []).to_json.html_safe %>;
+  var User = <%= @user.to_json.html_safe %>;
 </script>

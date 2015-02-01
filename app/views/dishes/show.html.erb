@@ -7,11 +7,13 @@
             <img src="<%= @dish.photo %>">
           </a>
           <div class="panel-info">
-            <h3>Restaurants Name</h3>
+            <h3><%= @dish.store_name %></h3>
+<!--
             <h5>Address</h5>
             <div class="restaurant-map">
               embed map here
             </div>
+-->
           </div>
         </div>
       </div>
@@ -41,11 +43,9 @@
           </div>
         </div>
       </div>
-      
+
       <div class="panel panel-default dish-comment" ng-controller="commentDishCtrl">
-        <div class="panel-heading">即時討論</div>
-      <div class="panel panel-default dish-comment" ng-controller="commentDishCtrl">
-        <div class="panel-heading">留言</div>
+        <div class="panel-heading">即時討論 (Live!)</div>
         <div class="panel-body">
           <div ng-repeat="comment in comments" ng-class="'slide-left'">
             <div class="comment">
@@ -78,7 +78,7 @@
 
 <script>
   var CurrentUser = <%= current_user.get_object.to_json.html_safe %>;
-  var Dish = <%= @dish.get_object.to_json.html_safe %>;
+  var Dish = <%= @dish.get_object(current_user).to_json.html_safe %>;
   var ChatCluster = <%= @cluster.to_json.html_safe %>;
   var Collections = <%= (current_user ? current_user.collections.map {|c| c.get_object} : {}).to_json.html_safe %>;
 </script>

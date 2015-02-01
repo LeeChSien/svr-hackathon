@@ -12,8 +12,15 @@ class DishesController < ApplicationController
   end
 
   def list
-    @dishes = Dish.all.order('created_at DESC')
-    render json: @dishes.map {|dish| dish.get_object}
+    @dishes = []
+
+    if params[:user_id]
+      @dishes = User.find(params[:user_id]).dishes
+    else
+      @dishes = Dish.order('created_at DESC').paginate(:page => params[:page], :per_page => 30)
+    end
+
+    render json: @dishes.map {|dish| dish.get_object(current_user)}
   end
 
   def comments
@@ -84,7 +91,7 @@ class DishesController < ApplicationController
   def create
     @dish = Dish.new(dish_params.merge(user_id: current_user.id))
     @dish.save
-    render json: @dish.get_object
+    render json: @dish.get_object(current_user)
   end
 
   def update
