@@ -235,7 +235,7 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    rsolr (1.0.9)
+    rsolr (1.0.10)
       builder (>= 2.1.2)
     sass (3.4.10)
     sass-rails (5.0.1)
@@ -261,13 +261,13 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sunspot (2.1.0)
+    sunspot (2.1.1)
       pr_geohash (~> 1.0)
       rsolr (~> 1.0.7)
-    sunspot_rails (2.1.0)
+    sunspot_rails (2.1.1)
       nokogiri
       rails (>= 3)
-      sunspot (= 2.1.0)
+      sunspot (= 2.1.1)
     sunspot_solr (2.1.0)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
@@ -339,7 +339,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simple_form
   spring
-  sunspot_rails (= 2.1.0)
+  sunspot_rails
   sunspot_solr
   thin
   turbolinks

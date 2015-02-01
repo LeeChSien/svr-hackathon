@@ -98,7 +98,7 @@ gem 'cloudinary'
 gem 'will_paginate'
 
 # Apache Solr full-text search engine
-gem 'sunspot_rails', '2.1.0'
+gem 'sunspot_rails'
 
 # optional pre-packaged Solr distribution for use in development
 gem 'sunspot_solr'
