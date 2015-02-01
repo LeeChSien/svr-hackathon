@@ -1,7 +1,7 @@
 <script type="text/ng-template" id="manageCollectionsModalContent.html">
   <div class="modal-header">
     <button type="button" class="close" ng-click="close()" ng-if="!busy"><span aria-hidden="true">&times;</span></button>
-    <h3 class="modal-title">加入收藏</h3>
+    <h3 class="modal-title">收入我的口袋</h3>
   </div>
 
   <div class="modal-body">
@@ -12,11 +12,14 @@
         <i class="fa fa-check" ng-if="isCollectionIncludeDish(collection, selected_dish)"></i>
       </a>
     </div>
+    <button type="button" class="btn btn-success btn-block" ng-click="close()">完成</button>
+  </div>
 
+  <div class="modal-footer">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="列表名稱..." ng-model="model.collection">
+      <input type="text" class="form-control" placeholder="口袋清單名稱..." ng-model="model.collection">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="submitCollection()">新增收藏列表</button>
+        <button class="btn btn-default" type="button" ng-click="submitCollection()">新增口袋清單</button>
       </span>
     </div>
   </div>

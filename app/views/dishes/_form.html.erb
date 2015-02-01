@@ -12,12 +12,13 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.input_field :description, class: 'form-control', placeholder: '評論這家店...',
+    <label>筆記 & 評論</label>
+    <%= f.input_field :description, class: 'form-control', placeholder: '說說一兩個會讓你記住這家店原因吧！',
       :'ng-model' => "model.description", :'msd-elastic' => '' %>
   </div>
 
   <div class="form-group">
-    <tags-input ng-model="model.tags" placeholder="新增標籤" min-length="2"></tags-input>
+    <tags-input ng-model="model.tags" placeholder="按 Enter 以新增標籤" min-length="2"></tags-input>
     <%= f.input_field :tag_list, :class => 'hide',
       :'ng-model' => 'model.tag_list' %>
   </div>
@@ -26,6 +27,6 @@
   <%= f.input_field :longitude, class: 'hide' %>
 
   <div class="text-center">
-    <button type="button" class="btn btn-success btn-lg" ng-click="submit()" ng-disabled="busy">上傳 <i class="fa fa-circle-o-notch fa-spin" ng-if="busy"></i></a>
+    <button type="button" class="btn btn-success btn-lg" ng-click="submit()" ng-disabled="busy">收藏並分享<i class="fa fa-circle-o-notch fa-spin" ng-if="busy"></i></a>
   </div>
 <% end %>
