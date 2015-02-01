@@ -100,4 +100,12 @@ namespace :demo do
       end
     end
   end
+
+  desc 'generate avatar'
+  task :user_avatar => :environment do
+    User.all.each do |u|
+      u.create_avatar
+      puts u.id
+    end
+  end
 end

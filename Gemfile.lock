@@ -152,6 +152,7 @@ GEM
     progress_bar (1.0.0)
       highline (~> 1.6.1)
       options (~> 2.3.0)
+    quilt (0.1.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -235,6 +236,7 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rmagick (2.13.4)
     rsolr (1.0.10)
       builder (>= 2.1.2)
     sass (3.4.10)
@@ -315,6 +317,7 @@ DEPENDENCIES
   omniauth-facebook
   pg
   progress_bar
+  quilt
   rails (= 4.2.0)
   rails-assets-angular
   rails-assets-angular-animate
@@ -335,6 +338,7 @@ DEPENDENCIES
   rails-assets-ngInfiniteScroll
   rails-assets-ngUpload
   rails_12factor
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form

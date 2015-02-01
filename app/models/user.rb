@@ -33,13 +33,17 @@ class User < ActiveRecord::Base
     timestamp = Time.now
     update_attributes(fingerprint: Digest::MD5.hexdigest("user-#{id}-#{timestamp}"))
 
-=begin
-    filename  = "/tmp/#{fingerprint}.png"
-    identicon = Quilt::Identicon.new fingerprint, :scale => 10
-    identicon.write filename
+    create_avatar
+  end
 
-    self.photo = File.open(filename)
-    self.save!
-=end
+  def create_avatar
+    if !avatar.present?
+      filename  = "/tmp/#{fingerprint}.png"
+      identicon = Quilt::Identicon.new fingerprint, :scale => 10
+      identicon.write filename
+
+      self.avatar = File.open(filename)
+      self.save!
+    end
   end
 end

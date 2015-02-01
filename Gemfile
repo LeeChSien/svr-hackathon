@@ -106,6 +106,10 @@ gem 'sunspot_solr'
 # A Ruby terminal progress_bar
 gem 'progress_bar'
 
+# A Ruby library for generating identicon.
+gem "rmagick", :require => false
+gem 'quilt'
+
 # Rails Assets is the frictionless proxy between Bundler and Bower.
 gem 'rails-assets-angular'
 gem 'rails-assets-angular-sanitize'
